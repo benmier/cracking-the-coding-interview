@@ -1,1 +1,1 @@
-# cracking-the-coding-interview
+# My solutions to the algorithm questions from Cracking the Coding Interview, 6th edition.
