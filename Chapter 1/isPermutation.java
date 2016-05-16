@@ -5,14 +5,15 @@ public class isPermutation{
 		for(int i=0; i<str1.length(); i++){
 			for(int j=0; j<str2.length(); i++){
 				if(str1.charAt(i)==str2.charAt(j)){
+					System.out.println(str1.charAt(i)+", "+str2.charAt(j)+", "+str2);
 					str2 = str2.substring(0,j)+str2.substring(j+1);
 					break;
 				}
 			}
 		}
-			if(str2.length()==0)
-				return true;
-			return false;
+		if(str2.length()==0)
+			return true;
+		return false;
 	}
 
 	public static void main(String[] args){
