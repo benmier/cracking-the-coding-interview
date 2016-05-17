@@ -7,7 +7,22 @@ public class isOneEditAway{
 			b = a;
 			a = c; 
 		}
-		int[] 
+		int[] charMap = new int[a.length()];
+		for(int i=0; i<a.length(); i++){
+			charMap[a.charAt(i)]++;
+		}
+		for(int i=0; i<b.length(); i++){
+			if(charMap[b.charAt(i)]>0)
+				charMap[b.charAt(i)]--;
+		}
+		int count = 0;
+		for(int c: charMap){
+			if(c>0)
+				count++;
+			if(count>1)
+				return false;
+		}
+		return true;
 	}
 
 	public static void main(String[] args){
