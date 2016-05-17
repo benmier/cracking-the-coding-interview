@@ -16,12 +16,10 @@ public class isPalendromePermutation{
 			if(c==1)
 				count++;
 		}
-		if(count>1)
-			return false;
-		return true;
+		return count<=1;
 	}
 
 	public static void main(String[] args){
-		System.out.println(isPalendromePermutation("aabbcs"));
+		System.out.println(isPalendromePermutation("aabbs"));
 	}
 }
