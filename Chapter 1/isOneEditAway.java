@@ -47,6 +47,6 @@ public class isOneEditAway{
 
 
 	public static void main(String[] args){
-		System.out.println(isOneEditAwayAlternate("ascda","abcd"));
+		System.out.println(isOneEditAwayAlternate("abcfde","abcd"));
 	}
 }
