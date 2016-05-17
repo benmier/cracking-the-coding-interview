@@ -5,9 +5,10 @@ public class stringCompression{
 		int count = 1;
 		for(int i=0, j=0; i<str.length(); i++, j++){
 			if(newChar)
-				cStr[i]=str.charAt(i);
+				cStr[j]=str.charAt(i);
 			if(i==str.length()-1){
-				cStr[i]=Integer.toString(count).charAt(0);
+				j++;
+				cStr[j]=Integer.toString(count).charAt(0);
 				break;
 			}
 			if(str.charAt(i+1)==str.charAt(i)){
