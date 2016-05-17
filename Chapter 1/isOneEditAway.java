@@ -12,12 +12,12 @@ public class isOneEditAway{
 			charMap[a.charAt(i)]++;
 		}
 		for(int i=0; i<b.length(); i++){
-			if(charMap[b.charAt(i)]>0)
+			// if(charMap[b.charAt(i)]>0)
 				charMap[b.charAt(i)]--;
 		}
 		int count = 0;
 		for(int c: charMap){
-			if(c>0)
+			if(c!=0)
 				count++;
 			if(count>1)
 				return false;
