@@ -3,7 +3,7 @@ public class stringCompression{
 		char[] cStr = new char[str.length()];
 		boolean newChar = true;
 		int count = 1;
-		for(int i=0; i<str.length(); i++){
+		for(int i=0, j=0; i<str.length(); i++, j++){
 			if(newChar)
 				cStr[i]=str.charAt(i);
 			if(i==str.length()-1){
@@ -15,7 +15,8 @@ public class stringCompression{
 				count++;
 			}
 			else{
-				cStr[i]=Integer.toString(count).charAt(0);
+				j++;
+				cStr[j]=Integer.toString(count).charAt(0);
 				count = 1;
 				newChar = true;
 			}
