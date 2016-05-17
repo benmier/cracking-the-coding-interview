@@ -7,7 +7,7 @@ public class stringCompression{
 			if(newChar)
 				cStr[i]=str.charAt(i);
 			if(i==str.length()-1){
-				cStr[i]+=(char)count;
+				cStr[i]=Integer.toString(count).charAt(0);
 				break;
 			}
 			if(str.charAt(i+1)==str.charAt(i)){
@@ -15,7 +15,7 @@ public class stringCompression{
 				count++;
 			}
 			else{
-				cStr[i]+=(char)count;
+				cStr[i]=Integer.toString(count).charAt(0);
 				count = 1;
 				newChar = true;
 			}
