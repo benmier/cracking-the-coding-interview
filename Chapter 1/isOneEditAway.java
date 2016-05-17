@@ -14,7 +14,8 @@ public class isOneEditAway{
 			charMap[a.charAt(i)]++;
 		}
 		for(int i=0; i<b.length(); i++){
-			charMap[b.charAt(i)]--;
+			if(charMap[b.charAt(i)]>0)
+				charMap[b.charAt(i)]--;
 		}
 		int count = 0;
 		for(int c: charMap){
@@ -24,6 +25,6 @@ public class isOneEditAway{
 	}
 
 	public static void main(String[] args){
-		System.out.println(isOneEditAway("pale","bale"));
+		System.out.println(isOneEditAway("pale","bsale"));
 	}
 }
