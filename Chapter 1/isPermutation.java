@@ -15,7 +15,7 @@ public class isPermutation{
 		return false;
 	}
 
-	static boolean isPermutationAlt(String str1, String str2){
+	static boolean isPermutation2(String str1, String str2){
 		if(str1.length() != str2.length())
 			return false;
 		int[] strSet = new int[128];
@@ -31,6 +31,6 @@ public class isPermutation{
 	}
 
 	public static void main(String[] args){
-		System.out.println(isPermutationAlt("abc","cba"));
+		System.out.println(isPermutation2("abc","cab"));
 	}
 }
