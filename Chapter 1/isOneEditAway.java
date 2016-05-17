@@ -5,7 +5,9 @@ public class isOneEditAway{
 		if(Math.abs(a.length()-b.length())>1)
 			return false;
 		if(a.length()<b.length()){
-			isOneEditAway(b,a);
+			String c = b;
+			b = a;
+			a = c; 
 		}
 		int[] charMap = new int[128];
 		for(int i=0; i<a.length(); i++){
