@@ -1,7 +1,9 @@
 public class isPalendromePermutation{
-	static String isPalendromePermutation(String str){
+	static boolean isPalendromePermutation(String str){
 		str = str.toLowerCase();
-		return str;
+		for(int i=0; i<str.length(); i++){
+			
+		}
 	}
 
 	public static void main(String[] args){
