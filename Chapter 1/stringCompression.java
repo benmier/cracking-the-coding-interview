@@ -6,15 +6,15 @@ public class stringCompression{
 		for(int i=0; i<str.length(); i++){
 			if(newChar)
 				cStr[i]=str.charAt(i);
-			else if(str.charAt(i+1)==str.charAt(i)){
+			if(str.charAt(i+1)==str.charAt(i)){
 				newChar = false;
 				count++;
 			}
 			else{
 				cStr[i]+=(char)count;
 				count = 0;
+				newChar = true;
 			}
-
 		}
 		String s = new String(cStr);
 		return s;
