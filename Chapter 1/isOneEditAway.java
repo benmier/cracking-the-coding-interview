@@ -24,7 +24,26 @@ public class isOneEditAway{
 		return count==1;
 	}
 
+	static boolean isOneEditAwayAlternate(String a, String b){
+		if(Math.abs(a.length()-b.length())>1)
+			return false;
+		if(a.length()<b.length()){
+			String c = b;
+			b = a;
+			a = c; 
+		}
+		int count = 0;
+		for(int i=0, j=0; i<a.length(); i++, j++){
+			if(a.charAt(i)!=b.charAt(j)){
+				if(count>0)
+					return false;
+				count++;
+			}
+		}
+	}
+
+
 	public static void main(String[] args){
-		System.out.println(isOneEditAway("pale","bsale"));
+		System.out.println(isOneEditAwayAlternate("pale","lpale"));
 	}
 }
