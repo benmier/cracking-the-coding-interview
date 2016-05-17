@@ -7,7 +7,7 @@ public class isOneEditAway{
 			b = a;
 			a = c; 
 		}
-		int[] charMap = new int[a.length()];
+		int[] charMap = new int[128];
 		for(int i=0; i<a.length(); i++){
 			charMap[a.charAt(i)]++;
 		}
@@ -22,10 +22,10 @@ public class isOneEditAway{
 			if(count>1)
 				return false;
 		}
-		return true;
+		return count==1;
 	}
 
 	public static void main(String[] args){
-		System.out.println(isOneEditAway("pale","ple"));
+		System.out.println(isOneEditAway("abcdefghijklmnopqrsttuvwxyz","abcdaefghijklmnopqrstuvwxyz"));
 	}
 }
