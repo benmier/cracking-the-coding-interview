@@ -22,6 +22,6 @@ public class isPalendromePermutation{
 	}
 
 	public static void main(String[] args){
-		System.out.println(isPalendromePermutation("abcdefg gfedcbassag"));
+		System.out.println(isPalendromePermutation("aabbcs"));
 	}
 }
