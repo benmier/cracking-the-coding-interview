@@ -33,17 +33,20 @@ public class isOneEditAway{
 			a = c; 
 		}
 		int count = 0;
-		for(int i=0, j=0; i<a.length(); i++, j++){
+		for(int i=0, j=0; i<b.length(); i++, j++){
 			if(a.charAt(i)!=b.charAt(j)){
 				if(count>0)
 					return false;
 				count++;
+				if(a.length()!=b.length())
+					j--;
 			}
 		}
+		return true;
 	}
 
 
 	public static void main(String[] args){
-		System.out.println(isOneEditAwayAlternate("pale","lpale"));
+		System.out.println(isOneEditAwayAlternate("abcd","abcdb"));
 	}
 }
