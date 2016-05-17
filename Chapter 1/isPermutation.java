@@ -24,6 +24,7 @@ public class isPermutation{
 			strSet1[str1.charAt(i)]++;
 			strSet2[str2.charAt(i)]++;
 		}
+		System.out.println(strSet1);
 		if(strSet1!=strSet2)
 			return false;
 		return true;
