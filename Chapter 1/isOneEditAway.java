@@ -11,20 +11,19 @@ public class isOneEditAway{
 		for(int i=0; i<a.length(); i++){
 			charMap[a.charAt(i)]++;
 		}
+		int count = 0;
 		for(int i=0; i<b.length(); i++){
 			charMap[b.charAt(i)]--;
-		}
-		int count = 0;
-		for(int c: charMap){
-			if(c!=0)
-				count++;
-			if(count>1)
+			if(charMap[b.charAt(i)]>1 || charMap[b.charAt(i)]<-1)
 				return false;
 		}
-		return count==1;
+		// for(int c: charMap){
+		// 	count+=c;
+		// }
+		// return count==1;
 	}
 
 	public static void main(String[] args){
-		System.out.println(isOneEditAway("abd","abcdc"));
+		System.out.println(isOneEditAway("abfd","abcdc"));
 	}
 }
