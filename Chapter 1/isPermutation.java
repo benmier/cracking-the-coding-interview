@@ -18,15 +18,15 @@ public class isPermutation{
 	static boolean isPermutationAlt(String str1, String str2){
 		if(str1.length() != str2.length())
 			return false;
-		int[] strSet1 = new int[128];
-		int[] strSet2 = new int[128];
+		int[] strSet = new int[128];
 		for(int i=0; i<str1.length(); i++){
-			strSet1[str1.charAt(i)]++;
-			strSet2[str2.charAt(i)]++;
+			strSet[str1.charAt(i)]++;
 		}
-		System.out.println(strSet1);
-		if(strSet1!=strSet2)
-			return false;
+		for(int i=0; i<str2.length(); i++){
+			strSet[str2.charAt(i)]--;
+			if(strSet[str2.charAt(i)]<0)
+				return false;
+		}
 		return true;
 	}
 
