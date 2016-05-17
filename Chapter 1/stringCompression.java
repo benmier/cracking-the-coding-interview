@@ -1,13 +1,20 @@
 public class stringCompression{
 	static String stringCompression(String str){
-		boolean newChar = true;
 		char[] cStr = new char[str.length()];
+		boolean newChar = true;
+		int count = 0;
 		for(int i=0; i<str.length(); i++){
 			if(newChar)
 				cStr[i]=str.charAt(i);
-			else{
-				
+			else if(str.charAt(i+1)==str.charAt(i)){
+				newChar = false;
+				count++;
 			}
+			else{
+				cStr[i]+=(char)count;
+				count = 0;
+			}
+
 		}
 		String s = new String(cStr);
 		return s;
