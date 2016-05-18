@@ -1,6 +1,5 @@
 public class rotateMatrix{
 	static int[][] rotateMatrix(int[][] arr){
-		int count = 0;
 		for(int i=0; i<arr.length-1; i++){
 			for(int j=0; j<arr[i].length-i; j++){
 				int temp = arr[i][j];
@@ -9,8 +8,6 @@ public class rotateMatrix{
 				count++;
 			}
 		}
-		double dcount = count;
-		System.out.println(dcount/(arr.length*arr.length));
 		return arr;		
 	}
 
