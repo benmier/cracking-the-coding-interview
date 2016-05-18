@@ -1,12 +1,11 @@
 public class rotateMatrix{
 	static int[][] rotateMatrix(int[][] arr){
-		for(int i=0; i<arr.length/2; i++){
-			for(int j=0; j<arr[i].length/2; j++){
+		for(int i=0; i<1; i++){
+			for(int j=0; j<arr[i].length; j++){
 				int temp = arr[i][j];
 				arr[i][j] = arr[arr[i].length-i-1][arr[j].length-j-1];
 				arr[arr[i].length-i-1][arr[j].length-j-1] = temp;
 			}
-			break;
 		}
 
 		return arr;		
