@@ -5,7 +5,6 @@ public class rotateMatrix{
 				int temp = arr[i][j];
 				arr[i][j] = arr[arr[i].length-j-1][arr[j].length-i-1];
 				arr[arr[i].length-j-1][arr[j].length-i-1] = temp;
-				count++;
 			}
 		}
 		return arr;		
