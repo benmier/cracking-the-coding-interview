@@ -9,12 +9,13 @@ public class rotateMatrix{
 				count++;
 			}
 		}
-		System.out.println(count);
+		double dcount = count;
+		System.out.println(dcount/(arr.length*arr.length));
 		return arr;		
 	}
 
 	public static void main(String[] args){
-		int test[][] = {{1,1,1,1,1},{2,2,2,2,2},{3,3,3,3,3},{4,4,4,4,4},{5,5,5,5,5}};
+		int test[][] = {{1,1,1,1},{2,2,2,2},{3,3,3,3},{4,4,4,4}};
 		System.out.println(java.util.Arrays.deepToString(test));
 		rotateMatrix(test);
 		System.out.println(java.util.Arrays.deepToString(test));
