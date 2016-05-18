@@ -4,14 +4,18 @@ public class stringRotation{
 			return false;
 		int s1Index = 0;
 		for(int i=0; i<s2.length(); i++){
-			if(s2[i]==s1[0]){
+			if(s2.charAt(i)==s1.charAt(0)){
 				int j = i+1;
+				boolean isLegit = true;
 				while(j<s2.length()){
-					if(s2[j]!=s1[s1Index++])
-						return false;
+					if(s2.charAt(j)!=s1.charAt(s1Index++))
+						isLegit = false;
 					j++;
 				}
-
+				if(isLegit){
+					if(isSubstring(s1,s2.substring(0,i)))
+						return true;
+				}
 			}
 		}
 		return false;
