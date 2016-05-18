@@ -2,15 +2,17 @@ public class stringRotation{
 	static boolean stringRotation(String s1, String s2){
 		if(s1.length()!=s2.length())
 			return false;
-		int s1Index = 0;
 		for(int i=0; i<s2.length(); i++){
+			int s1Index = 0;
 			if(s2.charAt(i)==s1.charAt(s1Index)){
 				int j = i+1;
 				boolean isLegit = true;
 				while(j<s2.length()){
 					s1Index++;
-					if(s2.charAt(j)!=s1.charAt(s1Index))
+					if(s2.charAt(j)!=s1.charAt(s1Index)){
 						isLegit = false;
+						break;
+					}
 					j++;
 				}
 				if(isLegit){
@@ -33,6 +35,6 @@ public class stringRotation{
 	}
 
 	public static void main(String[] args){
-		System.out.println(stringRotation("waterbottle","aterbottlew"));
+		System.out.println(stringRotation("waterbwttle","bwttlewater"));
 	}
 }
