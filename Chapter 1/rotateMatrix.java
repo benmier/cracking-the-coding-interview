@@ -1,6 +1,6 @@
 public class rotateMatrix{
-	static int[][] rotateMatrix(int[][] str){
-		return str;
+	static int[][] rotateMatrix(int[][] arr){
+		System.out.println(Arrays.deepToString(arr));
 	}
 
 	public static void main(String[] args){
