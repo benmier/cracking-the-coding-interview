@@ -1,31 +1,16 @@
 public class stringCompression{
 	static String stringCompression(String str){
-		char[] cStr = new char[str.length()];
-		boolean newChar = true;
+		String cStr = "";
 		int count = 1;
-		for(int i=0, j=0; i<str.length(); i++, j++){
-			if(newChar)
-				cStr[j]=str.charAt(i);
-			if(i==str.length()-1){
-				j++;
-				cStr[j]=Integer.toString(count).charAt(0);
-				break;
-			}
-			if(str.charAt(i+1)==str.charAt(i)){
-				newChar = false;
-				count++;
-			}
-			else{
-				j++;
-				cStr[j]=Integer.toString(count).charAt(0);
-				count = 1;
-				newChar = true;
+		for(int i=0; i<str.length(); i++){
+			if(i+1==str.length() || str.charAt(i+1)!=str.charAt(i)){
+				cStr += str.charAt(i) + count;
+				count=1;
 			}
 		}
-		String s = new String(cStr);
-		if(s.length()>str.length())
+		if(cStr.length()>str.length())
 			return str;
-		return s;
+		return cStr;
 	}
 
 
