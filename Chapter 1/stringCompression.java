@@ -1,11 +1,12 @@
 public class stringCompression{
 	static String stringCompression(String str){
 		String cStr = "";
-		int count = 1;
+		int count = 0;
 		for(int i=0; i<str.length(); i++){
+			count++;
 			if(i+1==str.length() || str.charAt(i+1)!=str.charAt(i)){
-				cStr += str.charAt(i) + count;
-				count=1;
+				cStr += "" + str.charAt(i) + count;
+				count = 0;
 			}
 		}
 		if(cStr.length()>str.length())
