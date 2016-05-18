@@ -16,6 +16,6 @@ public class stringCompression{
 
 
 	public static void main(String[] args){
-		System.out.println(stringCompression("ffggssddaa"));
+		System.out.println(stringCompression("benmier"));
 	}
 }
