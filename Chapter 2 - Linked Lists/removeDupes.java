@@ -68,7 +68,7 @@ class Node{
 		}
 		while(n.next!=null){
 			if(n.next.data==d){
-				n.next = n.next.next;
+				n = n.next;
 				return;
 			}
 			n = n.next;
