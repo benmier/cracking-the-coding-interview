@@ -1,23 +1,34 @@
 public class removeDupes{
-	// static removeDupes(Node head){
-
-	// }
+	static removeDupes(Node head){
+		
+	}
 
 	public static void main(String[] args){
 		Node head = createList(10);
-		head.printList();
-		// removeDupes(head);
+		printList(head);
+		head = removeDupes(head);
+		printList(head);
 	}
 
 	static Node createList(int length){
 		Node head = new Node(0);
 		Node first = head;
-		for (int i=1; i<10; i++) {
+		for (int i=1; i<length; i++) {
 			Node second = new Node(i);
 			first.next = second;
 			first = second;
 		}
 		return head;
+	}
+
+	static void printList(Node head){
+		Node curr = head;
+		while(curr.next!=null){
+			System.out.print(curr.data+", ");
+			curr = curr.next;
+		}
+		System.out.println(curr.data);
+		return;
 	}
 }
 
@@ -54,16 +65,5 @@ class Node{
 			n = n.next;
 		}
 		return head;
-	}
-
-	public void printList(){
-		Node curr = head;
-		while(curr.next.next!=null){
-			if(curr.next==null)
-				System.out.println(curr.data);
-			else
-				System.out.print(curr.data+", ");
-			curr = curr.next;
-		}
 	}
 }
