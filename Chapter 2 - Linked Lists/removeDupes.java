@@ -6,16 +6,15 @@ public class removeDupes{
 			arr[curr.data]++;
 			curr = curr.next;
 		}
-		for(int i=0; i<arr.length; i++){
-			System.out.println(arr[i]);
-			if(arr[i]>1)
-				deleteNode(head,i);
-		}
+		// for(int i=0; i<arr.length; i++){
+			// if(arr[i]>1)
+				head.deleteNode(0);
+		// }
 		return head;
 	}
 
 	public static void main(String[] args){
-		int[] info = {1,2,3,4,6,6,7,8,9};
+		int[] info = {1,2,3,4,5,6,7,8,9};
 		Node head = createList(info);
 		printList(head);
 		head = removeDupes(head);
@@ -42,21 +41,6 @@ public class removeDupes{
 		System.out.println(curr.data);
 		return;
 	}
-
-	static Node deleteNode(Node head, int d){
-		Node n = head;
-		if(n.data==d){
-			return head.next;
-		}
-		while(n.next!=null){
-			if(n.next.data==d){
-				n.next = n.next.next;
-				return head;
-			}
-			n = n.next;
-		}
-		return head;
-	}
 }
 
 class Node{
@@ -74,5 +58,21 @@ class Node{
 			n = n.next;
 		}
 		n.next = end;
+	}
+
+	void deleteNode(int d){
+		Node n = this;
+		if(n.data==d){
+			n.next = n;
+			return;
+		}
+		while(n.next!=null){
+			if(n.next.data==d){
+				n.next = n.next.next;
+				return;
+			}
+			n = n.next;
+		}
+		return;
 	}
 }
