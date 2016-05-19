@@ -1,19 +1,30 @@
 public class removeDupes{
-	static removeDupes(Node head){
-		
+	static Node removeDupes(Node head){
+		int[] arr = new int[128];
+		Node curr = head;
+		while(curr.next.next!=null){
+			arr[curr.data]++;
+			curr = curr.next;
+		}
+		for(int i=0; i<arr.length; i++){
+			if(arr[i]>1)
+				deleteNode(head,i);
+		}
+		return head;
 	}
 
 	public static void main(String[] args){
-		Node head = createList(10);
+		int[] info = {1,2,3,4,6,6,7,8,9};
+		Node head = createList(info);
 		printList(head);
 		head = removeDupes(head);
 		printList(head);
 	}
 
-	static Node createList(int length){
+	static Node createList(int[] info){
 		Node head = new Node(0);
 		Node first = head;
-		for (int i=1; i<length; i++) {
+		for (int i: info) {
 			Node second = new Node(i);
 			first.next = second;
 			first = second;
@@ -30,10 +41,22 @@ public class removeDupes{
 		System.out.println(curr.data);
 		return;
 	}
+
+	static Node deleteNode(Node head, int d){
+		Node n = head;
+		if(n.data==d){
+			return head.next;
+		}
+		while(n.next!=null){
+			if(n.next.data==d){
+				n.next = n.next.next;
+				return head;
+			}
+			n = n.next;
+		}
+		return head;
+	}
 }
-
-
-
 
 class Node{
 	Node next = null;
@@ -50,20 +73,5 @@ class Node{
 			n = n.next;
 		}
 		n.next = end;
-	}
-
-	Node deleteNode(Node head, int d){
-		Node n = head;
-		if(n.data==d){
-			return head.next;
-		}
-		while(n.next!=null){
-			if(n.next.data==d){
-				n.next = n.next.next;
-				return head;
-			}
-			n = n.next;
-		}
-		return head;
 	}
 }
