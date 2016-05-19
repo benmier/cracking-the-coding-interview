@@ -1,6 +1,6 @@
 public class removeDupes{
 	static removeDupes(Node head){
-
+		
 	}
 
 	public static void main(String[] args){
@@ -11,17 +11,13 @@ public class removeDupes{
 			first.next = second;
 			first = second;
 		}
-		Node curr = head;
-		for(int j=0; j<10; j++){
-			if(curr.next==null)
-				System.out.println(curr.data);
-			else
-				System.out.print(curr.data+", ");
-			curr = curr.next;
-		}
+		printList(head,10);
 		removeDupes(head);
+	}
+
+	static void printList(Node head, int length){
 		Node curr = head;
-		for(int j=0; j<10; j++){
+		for(int j=0; j<length; j++){
 			if(curr.next==null)
 				System.out.println(curr.data);
 			else
