@@ -5,15 +5,15 @@ public class stringRotation{
 		for(int i=0; i<s2.length(); i++){
 			int s1Index = 0;
 			if(s2.charAt(i)==s1.charAt(s1Index)){
-				int j = i+1;
-				while(j<s2.length()){
+				int s2Index = i+1;
+				while(s2Index<s2.length()){
 					s1Index++;
-					if(s2.charAt(j)!=s1.charAt(s1Index)){
+					if(s2.charAt(s2Index)!=s1.charAt(s1Index)){
 						break;
 					}
-					j++;
+					s2Index++;
 				}
-				if(j==s2.length()){
+				if(s2Index==s2.length()){
 					if(isSubstring(s1,s2.substring(0,i)))
 						return true;
 				}
