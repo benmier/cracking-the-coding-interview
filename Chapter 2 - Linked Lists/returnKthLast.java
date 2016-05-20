@@ -19,21 +19,21 @@ public class returnKthLast{
 	static Node returnKthLastAlternate(Node head, int k){
 		if(k<=0 || head==null)
 			return null;
-		Node walker = head;
-		Node runner = head;
-		//Move the walker k nodes in
+		Node p1 = head;
+		Node p2 = head;
+		//Move the p1 k nodes in
 		for(int i=0; i<k; i++){
-			if(walker==null)
+			if(p1==null)
 				return null;
-			walker = walker.next;
+			p1 = p1.next;
 		}
-		//Move them at the same pace. When walker hits the end, runner will be at kth to last node
-		while(walker != null){
-			walker = walker.next;
-			runner = runner.next;
+		//Move them at the same pace. When p1 hits the end, p2 will be at kth to last node
+		while(p1 != null){
+			p1 = p1.next;
+			p2 = p2.next;
 		}
-		System.out.println(runner.data);
-		return runner;
+		System.out.println(p2.data);
+		return p2;
 	}
 
 	static int returnKthLastRecursive(Node head, int k){
