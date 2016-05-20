@@ -16,12 +16,20 @@ public class returnKthLast{
 		return curr;
 	}
 
+	static int returnKthLastAlternate(Node head, int k){
+		if(head==null)
+			return 0;
+		int index = returnKthLastAlternate(head.next,k)+1);
+		if(index==k)
+			System.out.println(head.data);
+		return index;
+	}
+
 	public static void main(String[] args){
 		int[] info = {1,2,3,4,5,6,7,8,9};
 		Node sLL = createList(info);
 		printList(sLL);
 		returnKthLast(sLL,3);
-		printList(sLL);
 	}
 
 	static Node createList(int[] info){
