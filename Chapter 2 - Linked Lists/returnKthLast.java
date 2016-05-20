@@ -1,6 +1,6 @@
 public class returnKthLast{
 	static Node returnKthLast(Node n, int k){
-		if(k>=0)
+		if(k<=0)
 			return n;
 		Node curr = n;
 		int length = 0;
@@ -30,7 +30,7 @@ public class returnKthLast{
 		Node sLL = createList(info);
 		printList(sLL);
 		returnKthLast(sLL,3);
-		// returnKthLastRecursive(sLL,3);
+		returnKthLastRecursive(sLL,3);
 	}
 
 	static Node createList(int[] info){
