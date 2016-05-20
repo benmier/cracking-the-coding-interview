@@ -1,7 +1,7 @@
 public class returnKthLast{
 	static Node returnKthLast(Node n, int k){
-		if(k<=0)
-			return n;
+		if(k<=0 || n==null)
+			return null;
 		Node curr = n;
 		int length = 0;
 		while(curr.next!=null){
@@ -14,6 +14,26 @@ public class returnKthLast{
 		}
 		System.out.println(curr.data);
 		return curr;
+	}
+
+	static Node returnKthLastAlternate(Node head, int k){
+		if(k<=0 || head==null)
+			return null;
+		Node walker = head;
+		Node runner = head;
+		//Move the walker k nodes in
+		for(int i=0; i<k; i++){
+			if(walker==null)
+				return null;
+			walker = walker.next;
+		}
+		//Move them at the same pace. When walker hits the end, runner will be at kth to last node
+		while(walker != null){
+			walker = walker.next;
+			runner = runner.next;
+		}
+		System.out.println(runner.data);
+		return runner;
 	}
 
 	static int returnKthLastRecursive(Node head, int k){
@@ -31,6 +51,7 @@ public class returnKthLast{
 		printList(sLL);
 		returnKthLast(sLL,3);
 		returnKthLastRecursive(sLL,3);
+		returnKthLastAlternate(sLL,3);
 	}
 
 	static Node createList(int[] info){
