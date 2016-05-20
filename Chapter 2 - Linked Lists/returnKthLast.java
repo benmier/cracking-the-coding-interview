@@ -16,10 +16,10 @@ public class returnKthLast{
 		return curr;
 	}
 
-	static int returnKthLastAlternate(Node head, int k){
+	static int returnKthLastRecursive(Node head, int k){
 		if(head==null)
 			return 0;
-		int index = returnKthLastAlternate(head.next,k)+1);
+		int index = returnKthLastRecursive(head.next,k)+1;
 		if(index==k)
 			System.out.println(head.data);
 		return index;
@@ -30,6 +30,7 @@ public class returnKthLast{
 		Node sLL = createList(info);
 		printList(sLL);
 		returnKthLast(sLL,3);
+		// returnKthLastRecursive(sLL,3);
 	}
 
 	static Node createList(int[] info){
