@@ -1,5 +1,7 @@
 public class deleteMiddleNode{
 	static void deleteMiddleNode(Node n){
+		if(n==null || n.next==null)
+			return;
 		while(n.next!=null){
 			n.data = n.next.data;
 			if(n.next.next==null){
@@ -10,11 +12,18 @@ public class deleteMiddleNode{
 		}
 	}
 
+	static void deleteMiddleNodeAlternate(Node n){
+		if(n==null || n.next==null)
+			return;
+		Node n2 = n.next;
+		n.next = n2.next;
+	}
+
 	public static void main(String[] args){
 		int[] info = {1,2,3,4,5,6,7,8,9};
 		Node sLL = createList(info);
 		printList(sLL);
-		deleteMiddleNode(sLL.next.next.next.next.next);
+		deleteMiddleNodeAlternate(sLL.next.next.next.next.next);
 		printList(sLL);
 	}
 
