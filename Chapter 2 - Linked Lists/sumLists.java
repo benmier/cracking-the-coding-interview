@@ -9,8 +9,14 @@ public class sumLists{
 					sum.next = new Node(n1.data+n2.data);
 			}
 			else{
-				
+				if(sum==null)
+					sum = new Node(n1.data+n2.data);
+				else
+					sum.next = new Node(n1.data+n2.data);
 			}
+			sum = sum.next;
+			n1 = n1.next;
+			n2 = n2.next;
 		}
 	}
 
