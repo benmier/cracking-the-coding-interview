@@ -1,9 +1,9 @@
 public class sumLists{
 	static Node sumLists(Node n1, Node n2){
-		Node sum = new Node(0);
+		Node sum = new Node(-1);
 		while(n1!=null && n2!=null){
 			if(n1.data+n2.data<10){
-				if(sum==null)
+				if(sum.data==-1)
 					sum = new Node(n1.data+n2.data);
 				else if(sum.next==null)
 					sum.next = new Node(n1.data+n2.data);
