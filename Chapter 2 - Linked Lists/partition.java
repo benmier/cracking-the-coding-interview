@@ -1,8 +1,29 @@
 public class partition{
-	static void partition(Node n){
+	static void partition(Node n, int p){
+		boolean createdBefore = false;
+		boolean createAfter = false;
 		while(n!=null){
-			
+			if(n.data<p){
+				if(!createdBefore){
+					Node before = new Node(p);
+				}
+				else{
+					Node n2 = new Node(p);
+					before.next = n2;
+				}
+			}
+			else{
+				if(!createdAfter){
+					Node after = new Node(p);
+				}
+				else{
+					Node n2 = new Node(p);
+					after.next = n2;
+				}
+			}
+			n = n.next;
 		}
+
 	}
 
 
