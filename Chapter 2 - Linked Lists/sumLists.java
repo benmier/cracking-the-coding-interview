@@ -8,7 +8,8 @@ public class sumLists{
 					sum.data = (n1.data+n2.data);
 				else
 					sum.data += (n1.data+n2.data);
-				sum.next = new Node(-1);
+				if(n1.next!=null && n2.next!=null)
+					sum.next = new Node(-1);
 			}
 			else{
 				if(sum.data==-1)
@@ -29,7 +30,7 @@ public class sumLists{
 
 
 	public static void main(String[] args){
-		int[] info = {7,8,9};
+		int[] info = {1,2,3};
 		int[] info2 = {4,5,6};
 		Node sLL = createList(info);
 		Node sLL2 = createList(info2);
