@@ -35,12 +35,30 @@ public class partition{
 		return beforeStart;
 	}
 
+	static Node partitionAlternate(Node n, int x){
+		Node head = n;
+		Node tail = n;
+		while(n!=null){
+			if(n.data<x){
+				n.next = head;
+				head = n;
+			}
+			else{
+				tail.next = n;
+				tail = n;
+			}
+			n = n.next;
+		}
+		tail.next = null;
+		return head;
+	}
+
 
 	public static void main(String[] args){
 		int[] info = {3,5,8,5,10,2,1};
 		Node sLL = createList(info);
 		printList(sLL);
-		Node sLL2 = partition(sLL,5);
+		Node sLL2 = partitionAlternate(sLL,5);
 		printList(sLL2);
 	}
 
