@@ -1,5 +1,5 @@
 public class partition{
-	static void partition(Node n, int x){
+	static Node partition(Node n, int x){
 		Node beforeStart = null;
 		Node beforeEnd = null;
 		Node afterStart = null;
@@ -37,11 +37,11 @@ public class partition{
 
 
 	public static void main(String[] args){
-		int[] info = {1,2,3,4,5,6,7,8,9};
+		int[] info = {3,5,8,5,10,2,1};
 		Node sLL = createList(info);
 		printList(sLL);
-		partition(sLL.next.next.next.next.next);
-		printList(sLL);
+		Node sLL2 = partition(sLL,5);
+		printList(sLL2);
 	}
 
 	static Node createList(int[] info){
