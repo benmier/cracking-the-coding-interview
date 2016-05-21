@@ -1,15 +1,18 @@
 public class sumLists{
-	static Node sumLists(Node n, int x){
-
+	static Node sumLists(Node n1, Node n2){
+		
 	}
 
 
 	public static void main(String[] args){
-		int[] info = {3,5,8,5,10,2,1};
+		int[] info = {1,2,3};
+		int[] info2 = {4,5,6};
 		Node sLL = createList(info);
+		Node sLL2 = createList(info2);
 		printList(sLL);
-		sumLists(sLL);
-		printList(sLL);
+		printList(sLL2);
+		Node sLL3 = sumLists(sLL, sll2);
+		printList(sLL3);
 	}
 
 	static Node createList(int[] info){
