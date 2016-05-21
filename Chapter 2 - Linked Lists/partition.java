@@ -1,6 +1,8 @@
 public class partition{
 	static void partition(Node n){
-		
+		while(n!=null){
+			
+		}
 	}
 
 
