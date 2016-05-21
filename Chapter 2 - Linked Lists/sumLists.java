@@ -5,10 +5,8 @@ public class sumLists{
 			if(n1.data+n2.data<10){
 				if(sum.data==-1)
 					sum.data = (n1.data+n2.data);
-				else if(sum.next==null)
-					sum.next = new Node(n1.data+n2.data);
-				else
-					sum.next.data += (n1.data+n2.data);
+				else if(sum.data==null)
+					sum.data += (n1.data+n2.data);
 			}
 			else{
 				if(sum.data==-1){
