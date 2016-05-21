@@ -39,6 +39,7 @@ public class partition{
 		Node head = n;
 		Node tail = n;
 		while(n!=null){
+			Node next = n.next;
 			if(n.data<x){
 				n.next = head;
 				head = n;
@@ -47,7 +48,7 @@ public class partition{
 				tail.next = n;
 				tail = n;
 			}
-			n = n.next;
+			n = next;
 		}
 		tail.next = null;
 		return head;
