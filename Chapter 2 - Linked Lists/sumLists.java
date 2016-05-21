@@ -4,7 +4,7 @@ public class sumLists{
 		while(n1!=null && n2!=null){
 			if(n1.data+n2.data<10){
 				if(sum.data==-1)
-					sum = new Node(n1.data+n2.data);
+					sum.data = (n1.data+n2.data);
 				else if(sum.next==null)
 					sum.next = new Node(n1.data+n2.data);
 				else
@@ -19,6 +19,7 @@ public class sumLists{
 				else
 					sum.next.data += (n1.data+n2.data)/10;
 			}
+			System.out.println(sum.data);
 			sum = sum.next;
 			n1 = n1.next;
 			n2 = n2.next;
