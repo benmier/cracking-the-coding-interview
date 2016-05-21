@@ -28,15 +28,35 @@ public class sumLists{
 		return sumTotal;
 	}
 
+	static Node sumListsRecursive(Node l1, Node l2, int carry){
+		if(l1==null && l2==null && carry==0)
+			return null;
+		Node result = new Node(0);
+		int value = carry;
+		if(l1!=null)
+			value += l1.data;
+		if(l2!=null)
+			value += l2.data;
+		result.data = value%10;
+
+		if(l1!=null || l2!=null){
+			Node more = sumListsRecursive(l1 == null ? null : l1.next,
+											l2 == null ? null : l2.next,
+												value >= 10 ? 1 : 0);
+			result.next = more;
+		}
+		return result;
+	}
+
 
 	public static void main(String[] args){
-		int[] info = {1,2,3};
-		int[] info2 = {4,5,6};
+		int[] info = {7,1,8};
+		int[] info2 = {5,9,2};
 		Node sLL = createList(info);
 		Node sLL2 = createList(info2);
 		printList(sLL);
 		printList(sLL2);
-		Node sLL3 = sumLists(sLL, sLL2);
+		Node sLL3 = sumListsRecursive(sLL, sLL2, 0);
 		printList(sLL3);
 	}
 
