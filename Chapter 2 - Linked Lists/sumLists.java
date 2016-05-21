@@ -1,8 +1,7 @@
 public class sumLists{
 	static Node sumLists(Node n1, Node n2){
-		Node sum = null;
-		sum.next = null;
-		while(n1!=null || n2!=null){
+		Node sum = new Node(0);
+		while(n1!=null && n2!=null){
 			if(n1.data+n2.data<10){
 				if(sum==null)
 					sum = new Node(n1.data+n2.data);
