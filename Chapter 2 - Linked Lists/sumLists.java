@@ -24,14 +24,12 @@ public class sumLists{
 			n1 = n1.next;
 			n2 = n2.next;
 		}
-		if(sum.data==-1)
-			sum = null;
 		return sumTotal;
 	}
 
 
 	public static void main(String[] args){
-		int[] info = {1,2,3};
+		int[] info = {7,8,9};
 		int[] info2 = {4,5,6};
 		Node sLL = createList(info);
 		Node sLL2 = createList(info2);
