@@ -11,7 +11,7 @@ public class sumLists{
 					sum.next.data += (n1.data+n2.data);
 			}
 			else{
-				if(sum==null){
+				if(sum.data==-1){
 					sum = new Node((n1.data+n2.data)%10);
 				}
 				else if(sum.next==null)
