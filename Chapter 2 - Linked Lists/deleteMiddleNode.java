@@ -1,13 +1,13 @@
 public class deleteMiddleNode{
 	static void deleteMiddleNode(Node n){
-		
+		System.out.println(n.next.next.next.data);
 	}
 
 	public static void main(String[] args){
-		int[] info = {1,2,3,4,5,5,6,7,8,9};
+		int[] info = {1,2,3,4,5,6,7,8,9};
 		Node sLL = createList(info);
 		printList(sLL);
-		deleteMiddleNode(sLL);
+		deleteMiddleNode(sLL.next.next.next);
 		printList(sLL);
 	}
 
