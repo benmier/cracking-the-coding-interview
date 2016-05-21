@@ -1,9 +1,6 @@
 public class deleteMiddleNode{
 	static void deleteMiddleNode(Node n){
-		while(n!=null){
-			if(n.next.data==n.data){
-				break;
-			}
+		while(n.next!=null){
 			n.data = n.next.data;
 			n = n.next;
 		}
