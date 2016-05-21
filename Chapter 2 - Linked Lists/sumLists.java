@@ -5,19 +5,21 @@ public class sumLists{
 			if(n1.data+n2.data<10){
 				if(sum.data==-1)
 					sum.data = (n1.data+n2.data);
-				else if(sum.data==null)
+				else
 					sum.data += (n1.data+n2.data);
+				sum.next = new Node(-1);
 			}
 			else{
-				if(sum.data==-1){
-					sum = new Node((n1.data+n2.data)%10);
-				}
-				else if(sum.next==null)
+				if(sum.data==-1)
+					sum.data = ((n1.data+n2.data)%10);
+				else
+					sum.data += (n1.data+n2.data)%10;
+				if(sum.next==null)
 					sum.next = new Node((n1.data+n2.data)/10);
 				else
-					sum.next.data += (n1.data+n2.data)/10;
+					sum.next.data += ((n1.data+n2.data)/10);
 			}
-			System.out.println(sum.data);
+			// System.out.println(sum.data);
 			sum = sum.next;
 			n1 = n1.next;
 			n2 = n2.next;
