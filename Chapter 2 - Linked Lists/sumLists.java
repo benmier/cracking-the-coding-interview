@@ -1,23 +1,30 @@
 public class sumLists{
 	static Node sumLists(Node n1, Node n2){
 		Node sum = null;
+		sum.next = null;
 		while(n1!=null || n2!=null){
 			if(n1.data+n2.data<10){
 				if(sum==null)
 					sum = new Node(n1.data+n2.data);
-				else
+				else if(sum.next==null)
 					sum.next = new Node(n1.data+n2.data);
+				else
+					sum.next.data += (n1.data+n2.data);
 			}
 			else{
-				if(sum==null)
-					sum = new Node(n1.data+n2.data);
+				if(sum==null){
+					sum = new Node((n1.data+n2.data)%10);
+				}
+				else if(sum.next==null)
+					sum.next = new Node((n1.data+n2.data)/10);
 				else
-					sum.next = new Node(n1.data+n2.data);
+					sum.next.data += (n1.data+n2.data)/10;
 			}
 			sum = sum.next;
 			n1 = n1.next;
 			n2 = n2.next;
 		}
+		return sum;
 	}
 
 
@@ -28,15 +35,15 @@ public class sumLists{
 		Node sLL2 = createList(info2);
 		printList(sLL);
 		printList(sLL2);
-		Node sLL3 = sumLists(sLL, sll2);
+		Node sLL3 = sumLists(sLL, sLL2);
 		printList(sLL3);
 	}
 
 	static Node createList(int[] info){
-		Node head = new Node(0);
+		Node head = new Node(info[0]);
 		Node first = head;
-		for (int i: info) {
-			Node second = new Node(i);
+		for (int i=1; i<info.length; i++) {
+			Node second = new Node(info[i]);
 			first.next = second;
 			first = second;
 		}
