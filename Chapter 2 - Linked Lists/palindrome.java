@@ -1,6 +1,8 @@
 import java.util.HashMap;
 public class palindrome{
 	static boolean palindrome(Node n){
+		if(n==null)
+			return false;
 		int[] charSet = new int[128];
 		while(n!=null){
 			charSet[n.data]++;
@@ -17,7 +19,7 @@ public class palindrome{
 	}
 
 	public static void main(String[] args){
-		int[] info = {0,1,2,4,2,1,0};
+		int[] info = {0,1,2,4,3,2,1,0};
 		Node sLL = createList(info);
 		printList(sLL);
 		System.out.println(palindrome(sLL));
