@@ -11,10 +11,10 @@ public class palindrome{
 	}
 
 	static Node createList(int[] info){
-		Node head = new Node(0);
+		Node head = new Node(info[0]);
 		Node first = head;
-		for (int i: info) {
-			Node second = new Node(i);
+		for (int i=1; i<info.length; i++) {
+			Node second = new Node(info[i]);
 			first.next = second;
 			first = second;
 		}
