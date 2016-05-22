@@ -1,14 +1,14 @@
 public class palindrome{
 	static boolean palindrome(Node n){
-		int[] charSet = new int[128];
+		HashMap<Char> charSet = new HashMap<Char>();
 		while(n!=null){
-			charSet[n.data.charAt(0)]++;
+			charSet[n.data]=1;
 		}
 		return true;
 	}
 
 	public static void main(String[] args){
-		char[] info = {"r","a","c","e","c","a","r"};
+		char[] info = {'r','a','c','e','c','a','r'};
 		Node sLL = createList(info);
 		printList(sLL);
 		System.out.println(palindrome(sLL));
