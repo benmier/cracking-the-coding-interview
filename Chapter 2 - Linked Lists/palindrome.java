@@ -3,7 +3,8 @@ public class palindrome{
 	static boolean palindrome(Node n){
 		HashMap charSet = new HashMap();
 		while(n!=null){
-			charSet[n.data]=1;
+			if(charSet.containsKey(n.data))
+				System.out.println("hit it");
 		}
 		return true;
 	}
@@ -15,7 +16,7 @@ public class palindrome{
 		System.out.println(palindrome(sLL));
 	}
 
-	static Node createList(int[] info){
+	static Node createList(char[] info){
 		Node head = new Node(info[0]);
 		Node first = head;
 		for (int i=1; i<info.length; i++) {
