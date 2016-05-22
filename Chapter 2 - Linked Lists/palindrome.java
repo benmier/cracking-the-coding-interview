@@ -4,7 +4,10 @@ public class palindrome{
 		HashMap charSet = new HashMap();
 		while(n!=null){
 			if(charSet.containsKey(n.data))
-				System.out.println("hit it");
+				charSet.put(n.data,0);
+			else
+				charSet.put(n.data,1);
+			n = n.next;
 		}
 		return true;
 	}
