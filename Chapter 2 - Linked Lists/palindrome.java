@@ -18,16 +18,16 @@ public class palindrome{
 		return true;
 	}
 
-	static Node palindromeAlternate(Node n){
+	static boolean palindromeAlternate(Node n){
 		Node reversed = reverseAndClone(n);
-		return reversed;
+		return isEqual(n, reversed);
 	}
 
 		static Node reverseAndClone(Node n){
 			Node head = null;
 			while(n!=null){
 				Node n2 = new Node(n.data);
-				n.next = head;
+				n2.next = head;
 				head = n2;
 				n = n.next;
 			}
@@ -44,13 +44,31 @@ public class palindrome{
 			return n1==null && n2==null;
 		}
 
+	static boolean palindromeAlternate2(Node n){
+		Node fast = n;
+		Node slow = n;
+		Stack<Integer> stack = new Stack<Integer>();
+		while(fast!= null && fast.next!=null){
+			stack.push(slow.data);
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		if(fast!=null)
+			slow = slow.next;
+		while(slow!=null){
+			int top = stack.pop().intValue();
+			if(top!=slow.data)
+				return false;
+			slow = slow.next;
+		}
+		return true;
+	}
+
 	public static void main(String[] args){
-		int[] info = {0,1,2,4,3,2,1,0};
+		int[] info = {0,1,2,4,2,1,0};
 		Node sLL = createList(info);
 		printList(sLL);
 		System.out.println(palindromeAlternate(sLL));
-		Node sLL2 = palindromeAlternate(sLL);
-		printList(sLL2);
 	}
 
 	static Node createList(int[] info){
