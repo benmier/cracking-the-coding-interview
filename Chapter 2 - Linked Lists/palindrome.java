@@ -1,6 +1,7 @@
+import java.util.HashMap;
 public class palindrome{
 	static boolean palindrome(Node n){
-		HashMap<Char> charSet = new HashMap<Char>();
+		HashMap charSet = new HashMap();
 		while(n!=null){
 			charSet[n.data]=1;
 		}
