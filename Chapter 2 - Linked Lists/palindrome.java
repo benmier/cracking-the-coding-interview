@@ -1,25 +1,29 @@
 import java.util.HashMap;
 public class palindrome{
 	static boolean palindrome(Node n){
-		HashMap charSet = new HashMap();
+		int[] charSet = new int[128];
 		while(n!=null){
-			if(charSet.containsKey(n.data))
-				charSet.put(n.data,0);
-			else
-				charSet.put(n.data,1);
+			charSet[n.data]++;
 			n = n.next;
+		}
+		int count = 0;
+		for(int i: charSet){
+			if(count>1)
+				return false;
+			if(i%2!=0)
+				count++;
 		}
 		return true;
 	}
 
 	public static void main(String[] args){
-		char[] info = {'r','a','c','e','c','a','r'};
+		int[] info = {0,1,2,4,2,1,0};
 		Node sLL = createList(info);
 		printList(sLL);
 		System.out.println(palindrome(sLL));
 	}
 
-	static Node createList(char[] info){
+	static Node createList(int[] info){
 		Node head = new Node(info[0]);
 		Node first = head;
 		for (int i=1; i<info.length; i++) {
