@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.Stack;
 public class palindrome{
 	static boolean palindrome(Node n){
 		if(n==null)
@@ -56,7 +56,7 @@ public class palindrome{
 		if(fast!=null)
 			slow = slow.next;
 		while(slow!=null){
-			int top = stack.pop().intValue();
+			int top = stack.pop();
 			if(top!=slow.data)
 				return false;
 			slow = slow.next;
@@ -68,7 +68,7 @@ public class palindrome{
 		int[] info = {0,1,2,4,2,1,0};
 		Node sLL = createList(info);
 		printList(sLL);
-		System.out.println(palindromeAlternate(sLL));
+		System.out.println(palindromeAlternate2(sLL));
 	}
 
 	static Node createList(int[] info){
