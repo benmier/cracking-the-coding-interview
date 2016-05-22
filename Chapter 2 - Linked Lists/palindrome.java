@@ -1,6 +1,10 @@
 public class palindrome{
 	static boolean palindrome(Node n){
-		
+		int[] charSet = new int[128];
+		while(n!=null){
+			charSet[n.data.charAt(0)]++;
+		}
+		return true;
 	}
 
 	public static void main(String[] args){
