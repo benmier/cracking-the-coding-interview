@@ -1,3 +1,33 @@
+public class Result{
+	public Node tail;
+	public int size;
+	public Result(Node tail, int size){
+		this.tail = tail;
+		this.size = size;
+	}
+}
+
+Result getTailAndSize(Node list){
+	if(list==null)
+		return null;
+	int size = 1;
+	Node curr = list;
+	while(curr.next!=null){
+		size++;
+		curr = curr.next;
+	}
+	return new Result(curr, size);
+}
+
+Node getKthNode(Node head, int k){
+	Node curr = head;
+	while(k>0 && curr!=null){
+		curr = curr.next;
+		k--;
+	}
+	return curr;
+}
+
 public class isIntersection{
 	static Node isIntersection(Node n1, Node n2){
 		if(list1 == null || list2 == null)
@@ -28,17 +58,8 @@ public class isIntersection{
 		return longer;
 	}
 
-		static Node Result(Node n){
-			
-		}
 
-		static Node getKthNode(Node n, int k){
-			
-		}
-
-
-
-
+	
 
 	public static void main(String[] args){
 		int[] info = {0,1,2,4,2,1,0};
