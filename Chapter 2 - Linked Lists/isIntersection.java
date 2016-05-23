@@ -1,7 +1,43 @@
 public class isIntersection{
-	static Node isIntersection(Node n){
+	static Node isIntersection(Node n1, Node n2){
+		if(list1 == null || list2 == null)
+			return null;
 
+		//Get lengths
+		Result result1 = getTailAndSize(list1);
+		Result result2 = getTailAndSize(list2);
+
+		//If last nodes of the 2 lists aren't equal, no intersection
+		if(result1.tail != result2.tail)
+			return null;
+
+		//Set pointers to begining of each list
+		Node shorter = result1.size < result2.size ? list1 : list2;
+		Node longer = result1.size < result2.size ? list2 : list1;
+		
+		//Advance longer pointer by difference in list lengths
+		longer = getKthNode(longer, Math.abs(result1.size - result2.size));
+
+		//Iterate through both lists until intersection
+		while(shorter != longer){
+			shorter = shorter.next;
+			longer = longer.next;
+		}
+
+		//Return collision node
+		return longer;
 	}
+
+		static Node Result(Node n){
+			
+		}
+
+		static Node getKthNode(Node n, int k){
+			
+		}
+
+
+
 
 
 	public static void main(String[] args){
