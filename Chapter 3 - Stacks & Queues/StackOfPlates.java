@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class StackOfPlates{
 	public static void main(String [] args){
 		SetOfStacks stack = new SetOfStacks();
@@ -5,17 +7,17 @@ public class StackOfPlates{
 	}
 }
 
-public class SetOfStacks extends Stack{
+public class SetOfStacks{
 	private int stackCapacity;
 	private int size;
 	private int currentStack = 0;
-	private Stack[] stack = new Stack[10];
+	private ArrayList<Stack> stacks = new ArrayList<Stack>();
 	public SetOfStacks(int size){
 		stackCapacity = size;
 	}
 	public void push(int value){
-		if(size!=stackCapacity){
-			super.push(value);
+		if(size<=stackCapacity){
+			super.push();
 			size++;
 		}
 		else
