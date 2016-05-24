@@ -15,7 +15,6 @@ public class StackOfPlates{
 		stacks.pop();
 		stacks.pop();
 		stacks.pop();
-		stacks.pop();
 	}
 }
 
@@ -53,6 +52,7 @@ class SetOfStacks{
 		else if(size==0){
 			currentStack--;
 			size = stackCapacity - 1;
+			stacks.remove(stacks.size() - 1);
 		}
 		else
 			size--;
