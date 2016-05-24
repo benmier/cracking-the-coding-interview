@@ -1,5 +1,4 @@
 import java.util.*;
-import FullStackException;
 
 public class array3Stacks{
 	private int numberOfStacks = 3;
