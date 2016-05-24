@@ -16,6 +16,7 @@ class Stack{
 	private static class StackNode{
 		private StackNode next = null;
 		private int data;
+		private int min;
 
 		public StackNode(int d){
 			this.data = d;
@@ -23,15 +24,12 @@ class Stack{
 	}
 
 	private StackNode top;
-	private int min = java.lang.Integer.MIN_VALUE;
 
 	public void push(int d){
 		StackNode newNode = new StackNode(d);
 		newNode.next = top;
 		top = newNode;
 		System.out.println("Push: "+top.data);
-		if(min==java.lang.Integer.MIN_VALUE)
-			min = top.data;
 	}
 
 	public int pop() throws EmptyStackException{
