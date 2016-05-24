@@ -17,8 +17,6 @@ public class QueueViaStacks{
 		queue.pop();
 		queue.pop();
 		queue.pop();
-		queue.pop();
-		queue.pop();
 	}
 }
 
