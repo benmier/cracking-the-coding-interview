@@ -29,7 +29,7 @@ class Stack{
 	}
 
 	private StackNode top;
-	private int stackMin = java.lang.Integer.MAX_VALUE;
+	private int stackMin = Integer.MAX_VALUE;
 
 	public void push(int d){
 		StackNode newNode = new StackNode(d);
