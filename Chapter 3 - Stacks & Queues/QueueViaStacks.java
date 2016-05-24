@@ -17,6 +17,7 @@ public class QueueViaStacks{
 		queue.pop();
 		queue.pop();
 		queue.pop();
+		queue.pop();
 	}
 }
 
@@ -24,24 +25,24 @@ class Queue{
 	Stack s1 = new Stack();
 	Stack s2 = new Stack();
 
-	void push(int value){
+	void add(int value){
 		s1.push(value);
 		System.out.println("Pushed "+s1.peek());
 	}
 
-	int peek() throws EmptyStackException{
-		if(s2.isEmpty()){
-			if(s1.isEmpty())
-				throw new EmptyStackException();
-			while(!s1.isEmpty()){
-				s2.push(s1.pop());
-			}
-		}
+	int peek(){
+		swapStacks();
 		System.out.println("Peek: "+s2.peek());
 		return s2.peek();
 	}
 
-	int pop() throws EmptyStackException{
+	int remove(){
+		swapStacks();
+		System.out.println("Popped "+s2.peek());
+		return s2.pop();
+	}
+
+	void invertStacks() throws EmptyStackException{
 		if(s2.isEmpty()){
 			if(s1.isEmpty())
 				throw new EmptyStackException();
@@ -49,7 +50,5 @@ class Queue{
 				s2.push(s1.pop());
 			}
 		}
-		System.out.println("Popped "+s2.peek());
-		return s2.pop();
 	}
 }
