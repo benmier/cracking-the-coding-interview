@@ -29,5 +29,7 @@ class Queue{
 		return s2.peek();
 	}
 
-	// void pop()
+	int pop(){
+		
+	}
 }
