@@ -12,6 +12,10 @@ public class StackOfPlates{
 		stacks.pop();
 		stacks.pop();
 		stacks.pop();
+		stacks.pop();
+		stacks.pop();
+		stacks.pop();
+		stacks.pop();
 	}
 }
 
@@ -31,7 +35,7 @@ class SetOfStacks{
 		if(size<stackCapacity){
 			stacks.get(currentStack).push(value);
 			size++;
-			System.out.println("Pushed "+value+" to stack "+currentStack+" with size "+size);
+			System.out.println("Pushed "+value+" to stack "+currentStack+" with size now "+size);
 		}
 		else{
 			Stack newStack = new Stack();
@@ -39,21 +43,21 @@ class SetOfStacks{
 			stacks.add(newStack);
 			size = 1;
 			currentStack++;
-			System.out.println("Pushed "+value+" to stack "+currentStack+" with size "+size);
+			System.out.println("Pushed "+value+" to stack "+currentStack+" with size now "+size);
 		}
 	}
 
 	public int pop() throws EmptyStackException{
-		if(stacks.get(currentStack).isEmpty() || (size==0 && currentStack==0))
+		if(currentStack==0 && size==0)
 			throw new EmptyStackException();
-		if(size==0){
+		else if(size==0){
 			currentStack--;
 			size = stackCapacity - 1;
 		}
 		else
 			size--;
 		int popped = stacks.get(currentStack).pop();
-		System.out.println("Popped "+popped+" from stack "+currentStack+" with size "+size);
+		System.out.println("Popped "+popped+" from stack "+currentStack+" with size now "+size);
 		return popped;
 
 	} 
