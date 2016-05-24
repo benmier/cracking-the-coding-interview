@@ -5,6 +5,8 @@ public class QueueViaStacks{
 		Queue queue = new Queue();
 		queue.push(0);
 		queue.push(1);
+		queue.peek();
+		queue.peek();
 	}
 }
 
@@ -17,15 +19,15 @@ class Queue{
 		System.out.println("Pushed "+s1.peek());
 	}
 
-	void peek(){
+	int peek(){
 		if(s2.isEmpty()){
-			while(s2!=null){
+			while(!s1.isEmpty()){
 				s2.push(s1.pop());
 			}
 		}
-		else
-			return s2.peek();
+		System.out.println("Peek: "+s2.peek());
+		return s2.peek();
 	}
 
-	void pop()
+	// void pop()
 }
