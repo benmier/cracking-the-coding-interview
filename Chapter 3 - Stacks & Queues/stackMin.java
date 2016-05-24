@@ -4,8 +4,8 @@ public class stackMin{
 
 	public static void main(String [] args){
 		Stack stack = new Stack();
-		stack.pop();
 		stack.push(1);
+		stack.minValue();
 		stack.push(2);
 		stack.peek();
 	}
@@ -23,14 +23,14 @@ class Stack{
 	}
 
 	private StackNode top;
-	private int min;
+	private int min = java.lang.Integer.MIN_VALUE;
 
 	public void push(int d){
 		StackNode newNode = new StackNode(d);
 		newNode.next = top;
 		top = newNode;
 		System.out.println("Push: "+top.data);
-		if(min==null)
+		if(min==java.lang.Integer.MIN_VALUE)
 			min = top.data;
 	}
 
