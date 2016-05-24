@@ -17,12 +17,13 @@ class SetOfStacks{
 	private int size;
 	private int currentStack = 0;
 	private ArrayList<Stack> stacks = new ArrayList<Stack>();
+	
 	public SetOfStacks(int size){
 		stackCapacity = size;
 		Stack first = new Stack();
 		stacks.add(first);
-		System.out.println("New SetOfStacks created");
 	}
+
 	public void push(int value){
 		if(size<stackCapacity){
 			stacks.get(currentStack).push(value);
@@ -38,4 +39,12 @@ class SetOfStacks{
 			System.out.println("Pushed "+value+" to stack "+currentStack+" with size "+size);
 		}
 	}
+
+	public int pop() throws EmptyStackException{
+		if(stacks.get(currentStack).top==null)
+			throw new EmptyStackException();
+		if(size==0)
+		return stacks.get(currentStack).pop();
+
+	} 
 }
