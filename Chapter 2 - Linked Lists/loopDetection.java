@@ -2,10 +2,18 @@ public class loopDetection{
 	static boolean loopDetection(Node n){
 		Node walker = n;
 		Node runner = n;
-		while(walker!=runner && walker!=null && runner!=null && runner.next!=null){
+		while(walker!=runner && runner!=null && runner.next!=null){
 			walker = walker.next;
 			runner = runner.next.next;
 		}
+		if(runner!=null && runner.next!=null)
+			return null;
+		walker = n;
+		while(walker!=runner){
+			walker = walker.next;
+			runner = runner.next;
+		}
+		return walker;
 	}
 
 
