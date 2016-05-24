@@ -23,12 +23,15 @@ class Stack{
 	}
 
 	private StackNode top;
+	private int min;
 
 	public void push(int d){
 		StackNode newNode = new StackNode(d);
 		newNode.next = top;
 		top = newNode;
 		System.out.println("Push: "+top.data);
+		if(min==null)
+			min = top.data;
 	}
 
 	public int pop() throws EmptyStackException{
@@ -51,9 +54,10 @@ class Stack{
 		return top==null;
 	}
 
-	// public int minValue(){
-	// 	int min;
-
-	// 	return min;
-	// }
+	public int minValue() throws EmptyStackException{
+		if(top==null)
+			throw new EmptyStackException();
+		System.out.println("Min: "+min);
+		return min;
+	}
 }
