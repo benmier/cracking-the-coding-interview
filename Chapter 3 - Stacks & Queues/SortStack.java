@@ -1,5 +1,5 @@
 public class SortStack{
-	static void sortStack(Stack unsorted){
+	static Stack sortStack(Stack unsorted){
 		Stack sorted = new Stack();
 		Stack buffer = new Stack();
 		int min = Integer.MAX_VALUE;
@@ -12,7 +12,7 @@ public class SortStack{
 					min = temp;
 					finished = false;
 				}
-				else if(temp!=min)
+				if(temp!=min)
 					buffer.push(temp);
 			}
 			sorted.push(min);
@@ -23,7 +23,7 @@ public class SortStack{
 					min = temp;
 					finished = false;
 				}
-				else if(temp!=min)
+				if(temp!=min)
 					unsorted.push(temp);
 			}
 			sorted.push(min);
@@ -31,20 +31,7 @@ public class SortStack{
 		while(!sorted.isEmpty()){
 			unsorted.push(sorted.pop());
 		}
-	}
-
-	static boolean shiftStacks(Stack s1, Stack s2, int min, boolean finished){
-		while(!s1.isEmpty()){
-			int temp = s1.pop();
-			if(temp<min){
-				min = temp;
-				finished = false;
-			}
-			else if(temp!=min)
-				s2.push(temp);
-		}
-		sorted.push(min);
-		return finished;
+		return unsorted;
 	}
 
 	static void printStack(Stack s){
@@ -65,7 +52,7 @@ public class SortStack{
 		stack.push(6);
 		stack.push(4);
 		stack.push(5);
-		sortStack(stack);
-		printStack(stack);
+		Stack unsorted = sortStack(stack);
+		printStack(unsorted);
 	}
 }
