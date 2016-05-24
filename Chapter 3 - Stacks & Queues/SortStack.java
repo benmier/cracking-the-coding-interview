@@ -1,6 +1,30 @@
 public class SortStack{
-	static void sortStack(Stack s){
-		
+	static void sortStack(Stack unsorted){
+		Stack sorted = new Stack();
+		Stack buffer = new Stack();
+		int min = Integer.MAX_VALUE;
+		int temp;
+		while(!unsorted.isEmpty()){
+			while(!unsorted.isEmpty()){
+				temp = unsorted.pop();
+				if(temp<min)
+					min = temp;
+				else
+					buffer.push(temp);
+			}
+			sorted.push(min);
+			while(!buffer.isEmpty()){
+				temp = buffer.pop();
+				if(temp<min)
+					min = temp;
+				else
+					unsorted.push(temp);
+			}
+			sorted.push(min);
+		}
+		while(!sorted.isEmpty()){
+			unsorted.push(sorted.pop());
+		}
 	}
 
 	static void printStack(Stack s){
