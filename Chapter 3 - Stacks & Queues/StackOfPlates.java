@@ -5,6 +5,14 @@ public class StackOfPlates{
 	}
 }
 
-public class SetOfStacks{
-	
+public class SetOfStacks extends Stack{
+	private int stackCapacity;
+	private int size;
+	private Stack stack = new Stack();
+	public SetOfStacks(int size){
+		stackCapacity = size;
+	}
+	public void push(int value){
+		if
+	}
 }
