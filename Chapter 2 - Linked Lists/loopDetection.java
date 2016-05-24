@@ -6,7 +6,7 @@ public class loopDetection{
 			walker = walker.next;
 			runner = runner.next.next;
 		}
-		if(runner!=null && runner.next!=null)
+		if(runner==null || runner.next==null)
 			return null;
 		walker = n;
 		while(walker!=runner){
