@@ -3,29 +3,33 @@ public class SortStack{
 		Stack sorted = new Stack();
 		Stack buffer = new Stack();
 		int min = Integer.MAX_VALUE;
-		boolean finished = true;
+		boolean finished = false;
 		while(!finished){
 			finished = true;
 			while(!unsorted.isEmpty()){
 				int temp = unsorted.pop();
+				if(temp==min)
+					break;
 				if(temp<min){
 					min = temp;
 					finished = false;
 				}
-				if(temp!=min)
-					buffer.push(temp);
+				buffer.push(temp);
 			}
+			System.out.println("New min is "+min);
 			sorted.push(min);
 
 			while(!buffer.isEmpty()){
 				int temp = buffer.pop();
+				if(temp==min)
+					break;
 				if(temp<min){
 					min = temp;
 					finished = false;
 				}
-				if(temp!=min)
-					unsorted.push(temp);
+				unsorted.push(temp);
 			}
+			System.out.println("New min is "+min);
 			sorted.push(min);
 		}
 		while(!sorted.isEmpty()){
