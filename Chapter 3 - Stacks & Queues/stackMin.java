@@ -1,14 +1,11 @@
 public class stackMin{
-	// static int stackMin(){
-
-	// }
 
 	public static void main(String [] args){
 		Stack stack = new Stack();
-		for(int i=0; i<10; i++){
-			stack.push(i);
-		}
-		System.out.println(stack.peek());
+		stack.peek();
+		stack.push(1);
+		stack.push(2);
+		stack.peek();
 	}
 }
 
@@ -29,19 +26,30 @@ class Stack{
 		StackNode newNode = new StackNode(d);
 		newNode.next = top;
 		top = newNode;
+		System.out.println("Push: "+top.data);
 	}
 
 	public int pop(){
 		int item = top.data;
 		top = top.next;
+		System.out.println("Pop: "+item);
 		return item;
 	}
 
 	public int peek(){
+		if(top==null)
+			return;
+		System.out.println("Peek: "+top.data);
 		return top.data;
 	}
 
 	public boolean isEmpty(){
 		return top==null;
+	}
+
+	public int minValue(){
+		int min;
+
+		return min;
 	}
 }
