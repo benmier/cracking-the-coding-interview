@@ -9,19 +9,7 @@ public class stackMin{
 			stack.push(i);
 		}
 		System.out.println(stack.toString());
-		System.out.println(stackMin());
-	}
-}
-
-public class Stack2{
-	public Stack(){
-		Node stack = new Node(0); 
-	}
-	public void push(int val){
-		this.appendToTail(val);
-	}
-	public void pop(){
-		this.
+		// System.out.println(stackMin());
 	}
 }
 
@@ -31,16 +19,29 @@ class Stack{
 		private StackNode next = null;
 		private int data;
 
-	public Node(int d){
-		data = d;
+		public StackNode(int d){
+			this.data = d;
+		}
+
+	private StackNode top;
+
+	public void push(int d){
+		StackNode newNode = new StackNode(d);
+		newNode.next = top;
+		top = newNode;
 	}
 
-	void appendToTail(int d){
-		Node end = new Node(d);
-		Node n = this;
-		while(n.next!=null){
-			n = n.next;
-		}
-		n.next = end;
+	public void pop(){
+		int item = top.data;
+		top = top.next;
+		return item;
+	}
+
+	public int peek(){
+		return top.data;
+	}
+
+	public boolean isEmpty(){
+		return top==null;
 	}
 }
