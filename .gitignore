@@ -1,2 +1,2 @@
-*.class;
-*.sh;
+*.class
+commit.sh
