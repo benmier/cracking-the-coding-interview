@@ -49,9 +49,8 @@ public class array3Stacks{
 		return offset + size - 1;
 	}
 
-
-	public static void printStacks(array3Stacks stacks) {
-		System.out.println(AssortedMethods.arrayToString(stacks.getValues()));
+	public void printStacks(array3Stacks stacks) {
+		System.out.println(Arrays.deepToString(values));
 	}
 	
 	public static void main(String [] args) throws Exception  {
