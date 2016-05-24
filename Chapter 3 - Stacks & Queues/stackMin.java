@@ -4,10 +4,15 @@ public class stackMin{
 
 	public static void main(String [] args){
 		Stack stack = new Stack();
-		stack.push(1);
+		stack.push(5);
+		stack.push(6);
+		stack.push(3);
+		stack.push(7);
 		stack.minValue();
-		stack.push(2);
-		stack.peek();
+		stack.pop();
+		stack.minValue();
+		stack.pop();
+		stack.minValue();
 	}
 }
 
@@ -24,11 +29,18 @@ class Stack{
 	}
 
 	private StackNode top;
+	private int stackMin = java.lang.Integer.MAX_VALUE;
 
 	public void push(int d){
 		StackNode newNode = new StackNode(d);
 		newNode.next = top;
 		top = newNode;
+		if(d<stackMin){
+			stackMin = d;
+			top.min = d;
+		}
+		else
+			top.min = stackMin;
 		System.out.println("Push: "+top.data);
 	}
 
@@ -55,7 +67,7 @@ class Stack{
 	public int minValue() throws EmptyStackException{
 		if(top==null)
 			throw new EmptyStackException();
-		System.out.println("Min: "+min);
-		return min;
+		System.out.println("Min: "+top.min);
+		return top.min;
 	}
 }
