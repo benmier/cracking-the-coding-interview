@@ -1,8 +1,10 @@
+import java.util.EmptyStackException;
+
 public class stackMin{
 
 	public static void main(String [] args){
 		Stack stack = new Stack();
-		stack.peek();
+		stack.pop();
 		stack.push(1);
 		stack.push(2);
 		stack.peek();
@@ -29,16 +31,18 @@ class Stack{
 		System.out.println("Push: "+top.data);
 	}
 
-	public int pop(){
+	public int pop() throws EmptyStackException{
+		if(top==null)
+			throw new EmptyStackException();
 		int item = top.data;
 		top = top.next;
 		System.out.println("Pop: "+item);
 		return item;
 	}
 
-	public int peek() throws java.util.EmptyStackException{
+	public int peek() throws EmptyStackException{
 		if(top==null)
-			throw new java.util.EmptyStackException();
+			throw new EmptyStackException();
 		System.out.println("Peek: "+top.data);
 		return top.data;
 	}
