@@ -12,14 +12,14 @@ class SetOfStacks{
 	private int size;
 	private int currentStack = 0;
 	private ArrayList<Stack> stacks = new ArrayList<Stack>();
-	private Stack first = new Stack();
-	stacks.add(first);
 	public SetOfStacks(int size){
 		stackCapacity = size;
+		Stack first = new Stack();
+		stacks.add(first);
 	}
 	public void push(int value){
 		if(size<=stackCapacity){
-			stacks[0].push(value);
+			stacks.get(0).push(value);
 			size++;
 		}
 		else
