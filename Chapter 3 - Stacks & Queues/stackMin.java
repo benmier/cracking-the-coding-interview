@@ -36,9 +36,9 @@ class Stack{
 		return item;
 	}
 
-	public int peek(){
+	public int peek() throws java.util.EmptyStackException{
 		if(top==null)
-			return;
+			throw new java.util.EmptyStackException();
 		System.out.println("Peek: "+top.data);
 		return top.data;
 	}
@@ -47,9 +47,9 @@ class Stack{
 		return top==null;
 	}
 
-	public int minValue(){
-		int min;
+	// public int minValue(){
+	// 	int min;
 
-		return min;
-	}
+	// 	return min;
+	// }
 }
