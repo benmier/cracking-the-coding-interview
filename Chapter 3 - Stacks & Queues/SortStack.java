@@ -4,18 +4,24 @@ public class SortStack{
 		private Stack buffer = new Stack();
 		private int min = Integer.MAX_VALUE;
 		private int temp;
-		while(!unsorted.isEmpty()){
+		private boolean finished = true;
+		while(!finished){
+			finished = true; 
 			while(!unsorted.isEmpty()){
 				temp = unsorted.pop();
-				if(temp<min)
+				if(temp=<min){
 					min = temp;
+					finished = false;
+				}
 				buffer.push(temp);
 			}
 			sorted.push(min);
 			while(!buffer.isEmpty()){
 				temp = buffer.pop();
-				if(temp<min)
+				if(temp=<min){
 					min = temp;
+					finished = false;
+				}
 				unsorted.push(temp);
 			}
 			sorted.push(min);
