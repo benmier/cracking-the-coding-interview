@@ -1,10 +1,17 @@
 public class SortStack{
-	static sortStack(Stack s){
+	static void sortStack(Stack s){
+		
+	}
 
+	static void printStack(Stack s){
+		while(!s.isEmpty()){
+			System.out.print(s.pop()+" ");
+		}
+		System.out.println("");
 	}
 
 	public static void main(String [] args){
-		Stack stack = new Queue();
+		Stack stack = new Stack();
 		stack.push(9);
 		stack.push(1);
 		stack.push(8);
@@ -15,5 +22,6 @@ public class SortStack{
 		stack.push(4);
 		stack.push(5);
 		sortStack(stack);
+		printStack(stack);
 	}
 }
