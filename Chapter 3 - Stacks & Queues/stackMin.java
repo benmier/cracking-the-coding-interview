@@ -1,9 +1,9 @@
-import java.util.Stack;
+import java.util.ArrayList;
 
 public class stackMin{
-	// static int stackMin(){
+	static int stackMin(){
 
-	// }
+	}
 
 	public static void main(String [] args){
 		Stack stack = new Stack();
@@ -11,5 +11,13 @@ public class stackMin{
 			stack.push(i);
 		}
 		System.out.println(stack.toString());
+		System.out.println(stackMin());
 	}
+}
+
+public class Stack2{
+	public Stack(){
+		ArrayList stack = new ArrayList(); 
+	}
+	public void push()
 }
