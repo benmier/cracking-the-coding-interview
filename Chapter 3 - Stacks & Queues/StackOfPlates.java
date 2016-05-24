@@ -9,6 +9,9 @@ public class StackOfPlates{
 		stacks.push(3);
 		stacks.push(1);
 		stacks.push(7);
+		stacks.pop();
+		stacks.pop();
+		stacks.pop();
 	}
 }
 
@@ -41,10 +44,17 @@ class SetOfStacks{
 	}
 
 	public int pop() throws EmptyStackException{
-		if(stacks.get(currentStack).top==null)
+		if(stacks.get(currentStack).isEmpty() || (size==0 && currentStack==0))
 			throw new EmptyStackException();
-		if(size==0)
-		return stacks.get(currentStack).pop();
+		if(size==0){
+			currentStack--;
+			size = stackCapacity - 1;
+		}
+		else
+			size--;
+		int popped = stacks.get(currentStack).pop();
+		System.out.println("Popped "+popped+" from stack "+currentStack+" with size "+size);
+		return popped;
 
 	} 
 }
