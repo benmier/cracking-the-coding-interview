@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class stackMin{
 	static int stackMin(){
 
@@ -17,7 +15,32 @@ public class stackMin{
 
 public class Stack2{
 	public Stack(){
-		ArrayList stack = new ArrayList(); 
+		Node stack = new Node(0); 
 	}
-	public void push()
+	public void push(int val){
+		this.appendToTail(val);
+	}
+	public void pop(){
+		this.
+	}
+}
+
+
+class Stack{
+	private static class StackNode{
+		private StackNode next = null;
+		private int data;
+
+	public Node(int d){
+		data = d;
+	}
+
+	void appendToTail(int d){
+		Node end = new Node(d);
+		Node n = this;
+		while(n.next!=null){
+			n = n.next;
+		}
+		n.next = end;
+	}
 }
