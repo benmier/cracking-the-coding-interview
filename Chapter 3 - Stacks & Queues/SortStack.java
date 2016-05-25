@@ -3,8 +3,8 @@ public class SortStack{
 		Stack sorted = new Stack();
 		Stack buffer = new Stack();
 		int min = Integer.MAX_VALUE;
-		boolean changed = false;
-		while(!changed){
+		boolean changed = true;
+		while(changed){
 			changed = false;
 			while(!unsorted.isEmpty()){
 				int temp = unsorted.pop();
@@ -12,26 +12,27 @@ public class SortStack{
 					min = temp;
 					changed = true;
 				}
-				if(changed){
-					buffer.push(temp);
-					min++;
-				}
+				buffer.push(temp);
+			}
+			if(changed){
+				sorted.push(min);
+				min++;
 			}
 			System.out.println("New min is "+min);
-			sorted.push(min);
 
 			while(!buffer.isEmpty()){
 				int temp = buffer.pop();
-				if(temp==min)
-					break;
-				if(temp<min){
+				if(temp<=min){
 					min = temp;
-					finished = false;
+					changed = true;
 				}
 				unsorted.push(temp);
 			}
+			if(changed){
+				sorted.push(min);
+				min++;
+			}
 			System.out.println("New min is "+min);
-			sorted.push(min);
 		}
 		while(!sorted.isEmpty()){
 			unsorted.push(sorted.pop());
