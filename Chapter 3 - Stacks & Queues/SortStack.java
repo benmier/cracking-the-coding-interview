@@ -3,18 +3,19 @@ public class SortStack{
 		Stack sorted = new Stack();
 		Stack buffer = new Stack();
 		int min = Integer.MAX_VALUE;
-		boolean finished = false;
-		while(!finished){
-			finished = true;
+		boolean changed = false;
+		while(!changed){
+			changed = false;
 			while(!unsorted.isEmpty()){
 				int temp = unsorted.pop();
-				if(temp==min)
-					break;
-				if(temp<min){
+				if(temp<=min){
 					min = temp;
-					finished = false;
+					changed = true;
 				}
-				buffer.push(temp);
+				if(changed){
+					buffer.push(temp);
+					min++;
+				}
 			}
 			System.out.println("New min is "+min);
 			sorted.push(min);
