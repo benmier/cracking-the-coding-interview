@@ -5,6 +5,7 @@ public class SortStackAlternate{
 		buffer.push(unsorted.pop());
 		while(!unsorted.isEmpty()){
 			int value = unsorted.pop();
+			System.out.println("Value is now "+buffer.peek());
 			int count = 0;
 			while(!buffer.isEmpty() && value<buffer.peek()){
 				System.out.println("Popped "+buffer.peek()+" from buffer into unsorted");
@@ -34,7 +35,6 @@ public class SortStackAlternate{
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
-		stack.push(4);
 		sortStack(stack);
 		printStack(stack);
 	}
