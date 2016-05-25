@@ -1,7 +1,19 @@
 public class SortStackAlternate{
 	static Stack sortStack(Stack unsorted){
 		Stack buffer = new Stack();
-		
+		buffer.push(unsorted.pop());
+		while(!unsorted.isEmpty()){
+			int value = unsorted.pop();
+			int count = 0;
+			while(value<buffer.peek()){
+				unsorted.push(buffer.pop());
+				count++;
+			}
+			buffer.push(value);
+			for(int i=0; i<count; i++){
+				buffer.push(unsorted.pop());
+			}
+		}
 	}
 
 	static void printStack(Stack s){
