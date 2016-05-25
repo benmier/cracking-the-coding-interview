@@ -10,9 +10,9 @@ public class SortStackAlternate{
 				count++;
 			}
 			buffer.push(value);
-			for(int i=0; i<count; i++){
-				buffer.push(unsorted.pop());
-			}
+			// for(int i=0; i<count; i++){
+			// 	buffer.push(unsorted.pop());
+			// }
 		}
 		while(!buffer.isEmpty()){
 			unsorted.push(buffer.pop());
