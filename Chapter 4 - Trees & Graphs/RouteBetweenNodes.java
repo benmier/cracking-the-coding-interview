@@ -3,7 +3,7 @@ import java.util.*;
 public class RouteBetweenNodes{
 
 	public static void main(String [] args){
-		Graph g = new createNewGraph();
+		Graph g = createNewGraph();
 		Node[] n = g.getNodes();
 		Node start = n[3];
 		Node end = n[5];
