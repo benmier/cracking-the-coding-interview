@@ -4,7 +4,7 @@ class Node{
 	private Node[] adjacent;
 	public int adjacentCount;
 	private String vertex;
-	public Question.State state;
+	// public Question.State state;
 	
 	public Node(String vertex, int adjacentLength){
 		this.vertex = vertex;
@@ -17,5 +17,15 @@ class Node{
 			this.adjacent[adjacentCount] = x;
 			adjacentCount++;
 		}
+		else
+			System.out.println("No more adjacent can be added");
+	}
+
+	public Node[] getAdjacent(){
+		return adjacent;
+	}
+
+	public String getVertex(){
+		return vertex;
 	}
 }
