@@ -40,14 +40,14 @@ public class RouteBetweenNodes{
 	}
 
 	public static boolean search(Graph g, Node start, Node end){
-		Queue<Node> queue = new Queue<Node>();
+		Queue queue = new LinkedList();
 		start.marked = true;
 		end.marked = true;
 		queue.add(start);
 		queue.add(end);
 		while(!queue.isEmpty()){
-			Node r = queue.remove();
-			adjs = r.getAdjacent();
+			Object r = queue.remove();
+			Node[] adjs = r.getAdjacent();
 			for(int i=0; i<adjs.length; i++){
 				if(!adjs[i].marked){
 					if(adjs[i]==end)
