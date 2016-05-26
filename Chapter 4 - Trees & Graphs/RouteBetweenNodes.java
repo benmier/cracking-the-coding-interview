@@ -7,7 +7,7 @@ public class RouteBetweenNodes{
 		Node[] n = g.getNodes();
 		Node start = n[3];
 		Node end = n[5];
-		System.out.println(search(g,start,end));
+		// System.out.println(search(g,start,end));
 	}
 
 	public static Graph createNewGraph(){
@@ -29,8 +29,16 @@ public class RouteBetweenNodes{
 
 		for(int i=0; i<6; i++){
 			g.addNode(temp[i]);
+			System.out.println("Added "+g.getNodes()[i].getVertex());
+			for(int j: g.getNodes()[i].getAdjacent()){
+				System.out.println("   Adjacents: "+g.getNodes()[i].getAdjacent()[j]);
+			}
 		}
 		
 		return g;
 	}
+
+	// public static boolean search(Graph g, Node start, Node end){
+
+	// }
 }
