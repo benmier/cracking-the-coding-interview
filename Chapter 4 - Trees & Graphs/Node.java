@@ -1,5 +1,21 @@
 import java.util.*;
 
 class Node{
+	private Node[] adjacent;
+	public int adjacentCount;
+	private String vertex;
+	public Question.State state;
+	
+	public Node(String vertex, int adjacentLength){
+		this.vertex = vertex;
+		adjacentCount = 0;
+		adjacent = new Node[adjacentLength];
+	}
 
+	public void addAdjacent(Node x){
+		if(adjacentCount<adjacentLength){
+			this.adjacent[adjacentCount] = x;
+			adjacentCount++;
+		}
+	}
 }
