@@ -40,20 +40,20 @@ public class RouteBetweenNodes{
 	}
 
 	public static boolean search(Graph g, Node start, Node end){
-		Queue queue = new Queue();
+		Queue<Node> queue = new Queue<Node>();
 		start.marked = true;
 		end.marked = true;
-		queue.enqueue(start);
-		queue.enqueue(end);
+		queue.add(start);
+		queue.add(end);
 		while(!queue.isEmpty()){
-			Node r = queue.dequeue();
+			Node r = queue.remove();
 			adjs = r.getAdjacent();
 			for(int i=0; i<adjs.length; i++){
 				if(!adjs[i].marked){
 					if(adjs[i]==end)
 						return true;
 					adjs[i].marked = true;
-					queue.enqueue(adjs[i]);
+					queue.add(adjs[i]);
 				}
 			}
 		}
