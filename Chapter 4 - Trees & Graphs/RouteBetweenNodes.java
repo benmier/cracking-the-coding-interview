@@ -30,8 +30,9 @@ public class RouteBetweenNodes{
 		for(int i=0; i<6; i++){
 			g.addNode(temp[i]);
 			System.out.println("Added "+g.getNodes()[i].getVertex());
-			for(int j: g.getNodes()[i].getAdjacent()){
-				System.out.println("   Adjacents: "+g.getNodes()[i].getAdjacent()[j]);
+			Node[] adjs = g.getNodes()[i].getAdjacent();
+			for(int j=0; j<adjs.length; j++){
+				System.out.println(" Adjacent: "+adjs[j].getVertex());
 			}
 		}
 		
