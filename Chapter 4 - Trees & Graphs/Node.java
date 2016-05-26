@@ -4,7 +4,7 @@ class Node{
 	private Node[] adjacent;
 	public int adjacentCount;
 	private String vertex;
-	// public Question.State state;
+	public boolean marked = false;
 	
 	public Node(String vertex, int adjacentLength){
 		this.vertex = vertex;
