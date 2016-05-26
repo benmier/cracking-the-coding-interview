@@ -39,7 +39,24 @@ public class RouteBetweenNodes{
 		return g;
 	}
 
-	// public static boolean search(Graph g, Node start, Node end){
-
-	// }
+	public static boolean search(Graph g, Node start, Node end){
+		Queue queue = new Queue();
+		start.marked = true;
+		end.marked = true;
+		queue.enqueue(start);
+		queue.enqueue(end);
+		while(!queue.isEmpty()){
+			Node r = queue.dequeue();
+			adjs = r.getAdjacent();
+			for(int i=0; i<adjs.length; i++){
+				if(!adjs[i].marked){
+					if(adjs[i]==end)
+						return true;
+					adjs[i].marked = true;
+					queue.enqueue(adjs[i]);
+				}
+			}
+		}
+		return false;
+	}
 }

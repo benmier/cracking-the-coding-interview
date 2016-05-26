@@ -23,9 +23,9 @@ class Queue{
 	Stack s1 = new Stack();
 	Stack s2 = new Stack();
 
-	void add(int value){
+	void enqueue(int value){
 		s1.push(value);
-		System.out.println("Added "+s1.peek());
+		// System.out.println("Added "+s1.peek());
 	}
 
 	int peek(){
@@ -34,9 +34,9 @@ class Queue{
 		return s2.peek();
 	}
 
-	int remove(){
+	int dequeue(){
 		invertStacks();
-		System.out.println("Removed "+s2.peek());
+		// System.out.println("Removed "+s2.peek());
 		return s2.pop();
 	}
 
