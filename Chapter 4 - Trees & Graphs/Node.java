@@ -13,7 +13,7 @@ class Node{
 	}
 
 	public void addAdjacent(Node x){
-		if(adjacentCount<adjacentLength){
+		if(adjacentCount<adjacent.length){
 			this.adjacent[adjacentCount] = x;
 			adjacentCount++;
 		}
