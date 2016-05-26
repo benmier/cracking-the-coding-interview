@@ -7,7 +7,7 @@ public class RouteBetweenNodes{
 		Node[] n = g.getNodes();
 		Node start = n[3];
 		Node end = n[5];
-		// System.out.println(search(g,start,end));
+		System.out.println(search(g,start,end));
 	}
 
 	public static Graph createNewGraph(){
@@ -40,17 +40,17 @@ public class RouteBetweenNodes{
 	}
 
 	public static boolean search(Graph g, Node start, Node end){
-		Queue queue = new LinkedList();
+		LinkedList<Node> queue = new LinkedList<Node>();
 		start.marked = true;
 		end.marked = true;
 		queue.add(start);
 		queue.add(end);
 		while(!queue.isEmpty()){
-			Object r = queue.remove();
+			Node r = queue.remove();
 			Node[] adjs = r.getAdjacent();
 			for(int i=0; i<adjs.length; i++){
 				if(!adjs[i].marked){
-					if(adjs[i]==end)
+					if(adjs[i].getVertex()==end.getVertex())
 						return true;
 					adjs[i].marked = true;
 					queue.add(adjs[i]);
