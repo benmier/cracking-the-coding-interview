@@ -6,6 +6,7 @@ public class AnimalShelter{
 		Shelter shelter = new Shelter();
 		shelter.enqueue("cat","Sohpie");
 		shelter.enqueue("dog","Callie");
+		System.out.println(shelter.dequeueAny());
 	}
 }
 
@@ -23,8 +24,15 @@ class Shelter{
 			System.out.println("New Dog: "+dogs.peek());
 		}
 		else
-			System.out.println("Unknown animal");
+			System.out.println("Error: Unknown animal");
 	}
 
+	Object dequeueAny(){
+		double random = Math.random();
+		if(random<0.5)
+			return cats.removeFirst();
+		else
+			return dogs.removeFirst();
+	}
 
 }
