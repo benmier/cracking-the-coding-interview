@@ -8,24 +8,19 @@ public class BinarySearchTree{
 	}
 
 	public static void makeTree(int[] array){
-		BinarySearchTree tree = new BinarySearchTree();
-		Node root = new Node(array.length%2==0 ? array[array.length/2-1] : array[array.length/2]);
+		Node tree = new Node(array.length%2==0 ? array[array.length/2-1] : array[array.length/2]);
 
 		for(int i=0; i<array.length; i++){
 			Node n = new Node(array[i]);
-
+			
 		}
 	}
 }
 
-class BinarySearchTree{
-
-}
-
 class Node{
-	int data;
-	Node next = null;
-	public Node(int data){
-		this.data = data;
+	int name;
+	Node[] children;
+	public Node(int name){
+		this.name = name;
 	}
 }
