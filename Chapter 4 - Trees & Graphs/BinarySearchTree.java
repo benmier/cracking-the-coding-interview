@@ -25,12 +25,7 @@ public class BinarySearchTree{
 	public static void inOrderTraversal(Node node){
 		if(node!=null){
 			inOrderTraversal(node.left);
-			System.out.println("Node: "+node.name);
-			if(node.isLeft())
-				System.out.println("Left: "+node.left.name);
-			if(node.isRight())
-				System.out.println("Right: "+node.right.name);
-			System.out.println("");
+			System.out.print(node.name+" ");
 			inOrderTraversal(node.right);
 		}
 	}
@@ -42,13 +37,5 @@ class Node{
 	Node right = null;
 	public Node(int name){
 		this.name = name;
-	}
-
-	public boolean isLeft(){
-		return left!=null;
-	}
-
-	public boolean isRight(){
-		return right!=null;
 	}
 }
