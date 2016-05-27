@@ -18,12 +18,16 @@ public class listOfDepths{
 		}
 	}
 
+	static ArrayList<LinkedList<Node>> createLevelLinkedList(Node root){
+		ArrayList<LinkedList<Node>> lists = new ArrayList<LinkedList<Node>>();
+		listOfDepths(root,lists,0);
+		return lists;
+	}
+
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1);
-		ArrayList<LinkedList<Node>> lists = new ArrayList<LinkedList<Node>>();
-		listOfDepths(tree,lists,0);
-		System.out.println("");
+		ArrayList<LinkedList<Node>> lists = createLevelLinkedList(tree);
 	}
 
 	public static Node makeTree(int[] arr, int start, int end){
@@ -31,17 +35,8 @@ public class listOfDepths{
 			return null;
 		int mid = (start+end)/2;
 		Node n = new Node(arr[mid]);
-		// System.out.print(mid+" ");
 		n.left = makeTree(arr,start,mid-1);
 		n.right = makeTree(arr,mid+1,end);
 		return n;
-	}
-
-	public static void inOrderTraversal(Node node){
-		if(node!=null){
-			inOrderTraversal(node.left);
-			System.out.print(node.name+" ");
-			inOrderTraversal(node.right);
-		}
 	}
 }
