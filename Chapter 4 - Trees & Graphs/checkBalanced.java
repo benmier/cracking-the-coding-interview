@@ -2,7 +2,7 @@ import java.util.*;
 
 public class checkBalanced{
 
-	public static void checkBalanced(Node node, int leftHeight, int rightHeight){
+	public static boolean checkBalanced(Node node, int leftHeight, int rightHeight){
 		if(node!=null){
 			System.out.println(node.name+" "+leftHeight+" "+rightHeight);
 			leftHeight++;
@@ -10,12 +10,15 @@ public class checkBalanced{
 			rightHeight++;
 			checkBalanced(node.right,leftHeight,rightHeight);
 		}
+		if(Math.abs(leftHeight-rightHeight)>1)
+			return false;
+		return true;
 	}
 
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1);
-		checkBalanced(tree,0,0);
+		System.out.println(checkBalanced(tree,0,0));
 	}
 
 	public static Node makeTree(int[] arr, int start, int end){
