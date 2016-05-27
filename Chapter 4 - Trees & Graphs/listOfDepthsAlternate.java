@@ -10,7 +10,7 @@ public class listOfDepthsAlternate{
 			// System.out.println(root.name);
 		while(current.size()>0){
 			result.add(current); //Add previous level
-			System.out.println(result[result.length()-1].peek().name);
+			System.out.println(result.get(result.size()-1));
 			LinkedList<Node> parents = current; //Go to next level
 			current = new LinkedList<Node>();
 			for(Node parent: parents){ //Visit the children
