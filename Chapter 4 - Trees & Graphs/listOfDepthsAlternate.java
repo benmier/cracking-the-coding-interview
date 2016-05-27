@@ -7,6 +7,20 @@ public class listOfDepthsAlternate{
 		LinkedList<Node> current = new LinkedList<Node>();
 		if(root!=null)
 			current.add(root);
+			System.out.println(root.name);
+		while(current.size()>0){
+			result.add(current); //Add previous level
+			System.out.println(current.peek().name);
+			LinkedList<Node> parents = current; //Go to next level
+			current = new LinkedList<Node>();
+			for(Node parent: parents){ //Visit the children
+				if(parent.left!=null)
+					current.add(parent.left);
+				if(parent.right!=null)
+					current.add(parent.right);
+			}
+		}
+		return result;
 	}
 
 	public static void main(String [] args){
