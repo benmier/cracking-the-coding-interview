@@ -8,8 +8,10 @@ public class listOfDepths{
 			list = new LinkedList<Node>();
 			lists.add(list);
 		}
+		else
+			list = lists.get(depth);
 		if(node!=null){
-			lists[depth].add(node);
+			list.add(node);
 			System.out.println(node.name+" "+depth); 
 			listOfDepths(node.left,lists,depth+1);
 			listOfDepths(node.right,lists,depth+1);
@@ -19,7 +21,7 @@ public class listOfDepths{
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1);
-		LinkedList<Node> lists = new LinkedList<Node>();
+		ArrayList<LinkedList<Node>> lists = new ArrayList<LinkedList<Node>>();
 		listOfDepths(tree,lists,0);
 		System.out.println("");
 	}
