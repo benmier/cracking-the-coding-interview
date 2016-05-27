@@ -7,21 +7,25 @@ public class BinarySearchTree{
 		BinarySearchTree(array);
 	}
 
-	public static void BinarySearchTree(int[] array){
-		LinkedList<Node> tree = new LinkedList<Node>();
-		Node root = new Node(5);
-		// int root = array.length%2==0 ? array[array.length/2-1] : array[array.length/2];
-		System.out.println(root.data);
-		// for(int i=0; i<array.length; i++){
-		// 	Node n = 
-		// }
+	public static void makeTree(int[] array){
+		BinarySearchTree tree = new BinarySearchTree();
+		Node root = new Node(array.length%2==0 ? array[array.length/2-1] : array[array.length/2]);
+
+		for(int i=0; i<array.length; i++){
+			Node n = new Node(array[i]);
+
+		}
 	}
+}
+
+class BinarySearchTree{
+
 }
 
 class Node{
 	int data;
 	Node next = null;
-	void Node(int data){
+	public Node(int data){
 		this.data = data;
 	}
 }
