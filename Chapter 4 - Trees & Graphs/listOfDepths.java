@@ -2,9 +2,12 @@ import java.util.*;
 
 public class listOfDepths{
 
-	public static void listOfDepths(Node node, int depth){
+	public static void listOfDepths(Node node, ArrayList<LinkedList<Node>> list, int depth){
+		LinkedList<Node> list = null;
+		if(list.size()==level)
+			list = new LinkedList<Node>();
 		if(node!=null){
-			System.out.println(node.name+" "+depth);
+			System.out.println(node.name+" "+depth); 
 			listOfDepths(node.left,depth+1);
 			listOfDepths(node.right,depth+1);
 		}
