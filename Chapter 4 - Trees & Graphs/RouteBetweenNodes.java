@@ -29,10 +29,10 @@ public class RouteBetweenNodes{
 
 		for(int i=0; i<6; i++){
 			g.addNode(temp[i]);
-			System.out.println("Added "+g.getNodes()[i].getVertex());
+			// System.out.println("Added "+g.getNodes()[i].getVertex());
 			Node[] adjs = g.getNodes()[i].getAdjacent();
 			for(int j=0; j<adjs.length; j++){
-				System.out.println(" Adjacent: "+adjs[j].getVertex());
+				// System.out.println(" Adjacent: "+adjs[j].getVertex());
 			}
 		}
 		
@@ -40,6 +40,8 @@ public class RouteBetweenNodes{
 	}
 
 	public static boolean search(Graph g, Node start, Node end){
+		if(start==end)
+			return true;
 		LinkedList<Node> queue = new LinkedList<Node>();
 		start.marked = true;
 		end.marked = true;
@@ -47,9 +49,12 @@ public class RouteBetweenNodes{
 		queue.add(end);
 		while(!queue.isEmpty()){
 			Node r = queue.remove();
-			Node[] adjs = r.getAdjacent();
-			for(int i=0; i<adjs.length; i++){
-				if(!adjs[i].marked){
+			Node s = queue.remove();
+			Node[] adjacentR = r.getAdjacent();
+			Node[] adjacentS = s.getAdjacent();
+			int longest = adjacentR.length<adjacentS.length ? adjacentS.length : adjacentR.length;
+			for(int i=0; i<longest; i++){
+				if(!adjacentR[i].marked){
 					if(adjs[i].getVertex()==end.getVertex())
 						return true;
 					adjs[i].marked = true;
