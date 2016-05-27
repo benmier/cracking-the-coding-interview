@@ -7,11 +7,11 @@ public class checkBalancedAlternate{
 			return -1;
 
 		int leftHeight = checkHeight(root.left);
-		System.out.println(root.name+" "+leftHeight);
 		if(leftHeight==Integer.MIN_VALUE)
 			return Integer.MIN_VALUE;
 
 		int rightHeight = checkHeight(root.right);
+		System.out.println(root.name+" "+leftHeight+" "+rightHeight);
 		if(rightHeight==Integer.MIN_VALUE)
 			return Integer.MIN_VALUE;
 
