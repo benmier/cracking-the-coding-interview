@@ -15,7 +15,8 @@ public class BinarySearchTree{
 		int mid = (start+end)/2;
 		Node n = new Node(arr[mid]);
 		System.out.println("Start is "+start);
-		System.out.println("End is "+end);
+		System.out.println("Mid is "+mid);
+		System.out.println("End is "+end+"\n");
 		n.left = makeTree(arr,start,mid-1);
 		n.right = makeTree(arr,mid+1,end);
 		return n;
