@@ -4,26 +4,22 @@ public class BinarySearchTree{
 
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9};
-		makeTree(array);
+		makeTree(array, 0, array.length-1);
 	}
 
-	public static void makeTree(int[] array){
-		Node tree = new Node(array.length%2==0 ? array[array.length/2-1] : array[array.length/2]);
+	public static Node makeTree(int[] arr, int start, int end){
+		if(start<end)
+			return null;
+		int mid = (start+end)/2;
 
-		for(int i=0; i<array.length; i++){
-			Node n = new Node(array[i]);
-			if(n.name<tree.name)
-				tree.children[0] = n;
-			else if(n.name>tree.name)
-				tree.children[1] = n;
-			tree = n;
-		}
+		makeTree()
 	}
 }
 
 class Node{
 	int name;
-	Node[] children;
+	int[] left;
+	int[] right;
 	public Node(int name){
 		this.name = name;
 	}
