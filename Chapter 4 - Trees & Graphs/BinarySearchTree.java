@@ -14,9 +14,9 @@ public class BinarySearchTree{
 			return null;
 		int mid = (start+end)/2;
 		Node n = new Node(arr[mid]);
-		System.out.println("Start is "+start);
-		System.out.println("Mid is "+mid);
-		System.out.println("End is "+end+"\n");
+		// System.out.println("Start is "+start);
+		// System.out.println("Mid is "+mid);
+		// System.out.println("End is "+end+"\n");
 		n.left = makeTree(arr,start,mid-1);
 		n.right = makeTree(arr,mid+1,end);
 		return n;
@@ -25,7 +25,12 @@ public class BinarySearchTree{
 	public static void inOrderTraversal(Node node){
 		if(node!=null){
 			inOrderTraversal(node.left);
-			System.out.print(node.name+" ");
+			System.out.println("Node: "+node.name);
+			if(node.left.name!=0)
+				System.out.println("Left: "+node.left.name);
+			if(node.right.name!=0)
+				System.out.println("Node: "+node.right.name);
+			System.out.println("");
 			inOrderTraversal(node.right);
 		}
 	}
