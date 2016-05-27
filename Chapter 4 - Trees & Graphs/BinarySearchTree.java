@@ -8,7 +8,12 @@ public class BinarySearchTree{
 	}
 
 	public static void BinarySearchTree(int[] array){
-		int root = array.length%2==0 ? array[array.length/2-1] : array[array.length/2];
-		System.out.println(root);
+		LinkedList tree = new LinkedList();
+		LinkedListNode root = new LinkedListNode(array.length%2==0 ? array[array.length/2-1] : array[array.length/2]);
+		// int root = array.length%2==0 ? array[array.length/2-1] : array[array.length/2];
+		System.out.println(root.data);
+		// for(int i=0; i<array.length; i++){
+		// 	Node n = 
+		// }
 	}
 }
