@@ -1,14 +1,19 @@
 import java.util.*;
 
-public class Successor{
+public class successor{
 
-	public static boolean successor(Node node){
-		
+	public static int successor(Node node){
+		if(node!=null){
+			successor(node.left);
+			return node.name;
+			successor(node.right);
+		}
+		return node.name;
 	}
 
 
 	public static void main(String [] args){
-		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
+		int[] array = {0,1,2,3,4,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1);
 		System.out.println(successor(tree));
 	}
