@@ -3,14 +3,12 @@ import java.util.*;
 public class successor{
 
 	public static Integer successor(Node node){
-		if(node.right!=null){
-			node = node.right;
-			while(node.left!=null){
-				node = node.left;
-			}
-			return node.name;
+		if(node!=null){
+			successor(node.left);
+			System.out.println(node.name); 
+			successor(node.right);
 		}
-		return node.name;
+		return null;
 	}
 
 
