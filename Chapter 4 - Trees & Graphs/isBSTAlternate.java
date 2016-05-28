@@ -5,10 +5,14 @@ public class isBSTAlternate{
 	public static boolean isBST(Node node, Integer min, Integer max){
 		if(node==null)
 			return true;
-		if((min!=null && node.name<min)||(max!=null && node.name>max))
+		if((min!=null && node.name<=min)||(max!=null && node.name>=max)){
+			System.out.println("Min="+min+" Max="+max+" Node.name="+node.name+" and node is less <min or >max");
 			return false;
-		if(!isBST(node.left,min,node.name)||!isBST(node.right,node.name,max))
+		}
+		if(!isBST(node.left,min,node.name)||!isBST(node.right,node.name,max)){
+			System.out.println("Min="+min+" Max="+max+" Node.name="+node.name+" and node is less <min or >max");
 			return false;
+		}
 		return true;
 	}
 
