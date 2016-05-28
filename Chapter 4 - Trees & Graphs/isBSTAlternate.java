@@ -5,20 +5,16 @@ public class isBSTAlternate{
 	public static boolean isBST(Node node, Integer min, Integer max){
 		if(node==null)
 			return true;
-		if((min!=null && node.name<=min)||(max!=null && node.name>=max)){
-			System.out.println("Min="+min+" Max="+max+" Node.name="+node.name+" and node is less <min or >max");
+		if((min!=null && node.name<=min)||(max!=null && node.name>max))
 			return false;
-		}
-		if(!isBST(node.left,min,node.name)||!isBST(node.right,node.name,max)){
-			System.out.println("Min="+min+" Max="+max+" Node.name="+node.name+" and node is less <min or >max");
+		if(!isBST(node.left,min,node.name)||!isBST(node.right,node.name,max))
 			return false;
-		}
 		return true;
 	}
 
 
 	public static void main(String [] args){
-		int[] array = {0,1,2,3,4,5,6,7,8,9,10,9,8,7,6,5,4,3,2,1,0};
+		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1);
 		System.out.println(isBST(tree,null,null));
 	}
