@@ -11,8 +11,8 @@ public class successor{
 			return node.name;
 		} else{
 			int value = node.name;
-			return value;
-			while(node.parent!=null){
+			System.out.println(value);
+			while(node.parent!=null && node.name<=value){
 				node = node.parent;
 			}
 			if(value<node.name)
@@ -25,7 +25,7 @@ public class successor{
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1,null);
-		System.out.println(successor(tree.right.right.right));
+		System.out.println(successor(tree.left.left.right));
 	}
 
 	public static Node makeTree(int[] arr, int start, int end, Node parent){
