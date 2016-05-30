@@ -3,14 +3,14 @@ import java.util.*;
 public class BuildOrder{
 
 	public static Project[] findbuildOrder(String[] projects, String[][] dependencies){
-		Graph graph = buildGraph(project, dependencies);
+		Graph graph = buildGraph(projects, dependencies);
 		return orderProjects(graph.getNodes());
 	}
 
 	public static Graph buildGraph(String[] projects, String[][] dependencies){
 		Graph graph = new Graph();
 		for(String project: projects)
-			graph.createNode(project);
+			graph.getOrCreateNode(project);
 
 		for(String[] dependency : dependencies){
 			String first = dependency[0];
@@ -46,7 +46,7 @@ public class BuildOrder{
 	static int addNonDependent(Project[] order, ArrayList<Project> projects, int offset){
 		for(Project project : projects){
 			if(project.getNumberDependencies()==0){
-				order[offset] = projects;
+				order[offset] = project;
 				offset++;
 			}
 		}
@@ -69,8 +69,8 @@ public class BuildOrder{
 	}
 
 	public static void main(String [] args){
-		String[] projects = {"a","b","c","d","e","f","g","h","i","j",};
-		String[] dependencies = {
+		String[] projects = {"a","b","c","d","e","f","g","h","i","j"};
+		String[][] dependencies = {
 			{"a","b"},
 			{"b","c"},
 			{"a","c"},
@@ -88,65 +88,66 @@ public class BuildOrder{
 
 }
 
-class Project{
+class Project {
 	private ArrayList<Project> children = new ArrayList<Project>();
-	private HashMap<String,Project> map = new HashMap<String,Project>();
+	private HashMap<String, Project> map = new HashMap<String, Project>();
 	private String name;
 	private int dependencies = 0;
-
-	Project(String n){
+	
+	public Project(String n) {
 		name = n;
 	}
 
-	void addNeighbor(Project node){
-		if(!map.containsKey(node.getName())){
+	public String getName() {
+		return name;
+	}
+	
+	public void addNeighbor(Project node) {
+		if (!map.containsKey(node.getName())) {
 			children.add(node);
 			map.put(node.getName(), node);
 			node.incrementDependencies();
 		}
 	}
-
-	void incrementDependencies(){
+	
+	public void incrementDependencies() {
 		dependencies++;
 	}
-
-	void decrementDependencies(){
-		dependencies--;
-	}
-
-	String getName(){
-		return name;
-	}
-
-	ArrayList<Project> getChildren(){
+	
+	public ArrayList<Project> getChildren() {
 		return children;
 	}
-
-	int getNumberDependencies(){
+	
+	public void decrementDependencies() {
+		dependencies--;
+	}
+	
+	public int getNumberDependencies() {
 		return dependencies;
 	}
 }
 
-class Graph{
+class Graph {
 	private ArrayList<Project> nodes = new ArrayList<Project>();
-	private HashMap<String,Project> map = new HashMap<String,Project>();
-
-	Project getOrCreateNode(String name){
-		if(!map.containsKey(name)){
+	private HashMap<String, Project> map = new HashMap<String, Project>();
+	
+	public Project getOrCreateNode(String name) {
+		if (!map.containsKey(name)) {
 			Project node = new Project(name);
 			nodes.add(node);
 			map.put(name, node);
 		}
+		
 		return map.get(name);
 	}
-
-	void addEdge(String startName, String endName){
+	
+	public void addEdge(String startName, String endName) {
 		Project start = getOrCreateNode(startName);
 		Project end = getOrCreateNode(endName);
 		start.addNeighbor(end);
 	}
-
-	ArrayList<Project> getNodes(){
+	
+	public ArrayList<Project> getNodes() {
 		return nodes;
 	}
 }
