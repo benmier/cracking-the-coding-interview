@@ -2,8 +2,19 @@ import java.util.*;
 
 public class CommonAncestor{
 
-	public static Integer commonAncestor(Node node){
+	public static Integer commonAncestor(Node first, Node second){
 		
+
+
+	}
+
+	static int depth(Node node){
+		int depth = 0;
+		while(node!=null){
+			node = node.parent;
+			depth++;
+		}
+		return depth;
 	}
 
 
