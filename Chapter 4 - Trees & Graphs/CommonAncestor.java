@@ -3,7 +3,10 @@ import java.util.*;
 public class CommonAncestor{
 
 	public static Node commonAncestor(Node node1, Node node2){
+		System.out.println("Node 1 is: "+node1.name);
+		System.out.println("Node 2 is: "+node2.name);
 		int delta = depth(node1)-depth(node2);
+		System.out.println("Delta is: "+delta);
 		Node first = delta>0 ? node2 : node1;
 		Node second = delta>0 ? node1 : node2;
 		delta = Math.abs(delta);
@@ -12,8 +15,9 @@ public class CommonAncestor{
 			first = first.parent;
 			delta--;
 		}
+		System.out.println("First is now: "+first.name);
 
-		while(first!=null && second!=null && first!=second){
+		while(first!=second && first!=null && second!=null){
 			first = first.parent;
 			second = second.parent;
 		}
@@ -21,6 +25,8 @@ public class CommonAncestor{
 		if(first==null || second==null)
 			return null;
 
+		System.out.println(first.name);
+		return first;
 	}
 
 	static int depth(Node node){
@@ -36,7 +42,7 @@ public class CommonAncestor{
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1,null);
-		commonAncestor(tree.right.right,tree.right.right.left);
+		commonAncestor(tree.right.right,tree.right.left.right);
 	}
 
 	public static Node makeTree(int[] arr, int start, int end, Node parent){
