@@ -37,7 +37,7 @@ public class CommonAncestor{
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1,null);
-		commonAncestor(tree.right.right.right,tree.right.left.right);
+		commonAncestor(tree.right.right.right,tree.left.left.right);
 	}
 
 	public static Node makeTree(int[] arr, int start, int end, Node parent){
