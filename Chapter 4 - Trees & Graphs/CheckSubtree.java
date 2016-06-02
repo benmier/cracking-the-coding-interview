@@ -3,13 +3,20 @@ import java.util.*;
 public class CheckSubtree{
 
 	public static void checkSubtree(Node node){
-		if(node!=null){
+		if(node!=null || node.name!=-1){
 			System.out.print(node.name+" ");
-			if(node.left==null)
-				node.left = new Node(null);
+			if(node.left==null){
+				node.left = new Node(-1);
+				System.out.print(node.left.name+" ");
+			}
 			else
 				checkSubtree(node.left);
-			checkSubtree(node.right);
+			if(node.right==null){
+				node.right = new Node(-1);
+				System.out.print(node.right.name+" ");
+			}
+			else
+				checkSubtree(node.right);
 		}
 	}
 
