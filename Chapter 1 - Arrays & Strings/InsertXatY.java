@@ -2,7 +2,11 @@ import java.util.*;
 
 public class InsertXatY{
 	public static void insertXatY(ArrayList arr, int num, int index){
-		System.out.println(arr.get(arr.size()-1));
+		arr.add(0);
+		for(int i=arr.size()-1; i>index; i--){
+			arr.set(i,arr.get(i-1));
+		}
+		arr.set(index,num);
 	}
 
 
@@ -15,5 +19,6 @@ public class InsertXatY{
 		arr.add(7);
 		System.out.println(arr);
 		insertXatY(arr,10,2);
+		System.out.println(arr);
 	}
 }
