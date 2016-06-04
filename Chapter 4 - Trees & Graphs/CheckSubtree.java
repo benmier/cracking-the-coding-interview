@@ -2,29 +2,32 @@ import java.util.*;
 
 public class CheckSubtree{
 
-	public static void checkSubtree(Node node){
-		if(node!=null || node.name!=-1){
-			System.out.print(node.name+" ");
-			if(node.left==null){
-				node.left = new Node(-1);
-				System.out.print(node.left.name+" ");
-			}
-			else
-				checkSubtree(node.left);
-			if(node.right==null){
-				node.right = new Node(-1);
-				System.out.print(node.right.name+" ");
-			}
-			else
-				checkSubtree(node.right);
+	public static StringBuilder getOrderString(Node node, StringBuilder string){
+		if(node==null)
+			string.append("X ");
+		else{
+			string.append(node.name+" ");
+			getOrderString(node.left, string);
+			getOrderString(node.right, string);
 		}
+		return string;
+	}
+
+	public static boolean checkSubtree(Node node1, Node node2){
+		StringBuilder string1 = new StringBuilder();
+		StringBuilder string2 = new StringBuilder();
+		string1 = getOrderString(node1,string1);
+		string2 = getOrderString(node1,string1);
+		return string1.indexOf(string2.toString())!=-1;
 	}
 
 
 	public static void main(String [] args){
 		int[] array = {0,1,2,3,4,5,6,7,8,9,10};
 		Node tree = makeTree(array, 0, array.length-1);
-		checkSubtree(tree);
+		int[] array2 = {6,7,8,9,10};
+		Node tree2 = makeTree(array2, 0, array2.length-1);
+		System.out.println(checkSubtree(tree,tree2));
 	}
 
 	public static Node makeTree(int[] arr, int start, int end){
