@@ -1,16 +1,19 @@
 import java.util.*;
 
 public class RemoveNegatives{
-	public static void removeNegatives(ArrayList arr, int num, int index){
+	public static void removeNegatives(ArrayList arr){
 		for(int i=0; i<arr.size(); i++){
 			int count = 0;
-			if(arr.get(i)<0){
+			// System.out.println(arr.get(i));
+			if((int)arr.get(i)<0){
 				count++;
+				System.out.println(count);
 			}
 			else if(count>0){
-				arr.set(i,arr.get(i-count));
+				arr.set(i-count,(int)arr.get(i));
 			}
 		}
+		System.out.println(arr);
 	}
 
 
@@ -26,6 +29,5 @@ public class RemoveNegatives{
 		arr.add(6);
 		System.out.println(arr);
 		removeNegatives(arr);
-		System.out.println(arr);
 	}
 }
