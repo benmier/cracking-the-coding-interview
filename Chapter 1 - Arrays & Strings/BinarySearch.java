@@ -3,12 +3,12 @@ import java.util.*;
 public class BinarySearch{
 	public static Integer binarySearch(int key, int[] array, int min, int max){
 		int mid = (max-min)/2;
-		System.out.println(array[mid]);
+		System.out.println("Min is: "+array[min]+", Max is: "+array[max]+", Mid is: "+array[mid]+", Key is: "+key);
 		if(array[mid]==key)
 			return mid;
 		else if(array[mid]>key)
 			binarySearch(key, array, min, mid);
-		else
+		else if(array[mid]<key)
 			binarySearch(key, array, mid, max);
 		return null;
 	}
