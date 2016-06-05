@@ -7,9 +7,9 @@ public class BinarySearch{
 		if(max<min)
 			return null;
 		if(array[mid]>key)
-			binarySearch(key, array, min, mid-1);
+			binarySearch(key, array, min, mid);
 		else if(array[mid]<key)
-			binarySearch(key, array, mid+1, max);
+			binarySearch(key, array, mid, max);
 		else
 			return mid;
 	}
