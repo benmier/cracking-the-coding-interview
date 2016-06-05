@@ -2,8 +2,8 @@ import java.util.*;
 
 public class BinarySearch{
 	public static Integer binarySearch(int key, int[] array, int min, int max){
-		int mid = (max-min)/2;
-		System.out.println("Min is: "+min+", Max is: "+max+", Mid is: "+mid+", Key is: "+key);
+		int mid = (max-min)/2+min;
+		System.out.println("Min is: "+array[min]+", Max is: "+array[max]+", Mid is: "+array[mid]+", Key is: "+key);
 		if(max<min)
 			return null;
 		if(array[mid]>key)
