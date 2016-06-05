@@ -6,7 +6,7 @@ public class BinarySearch{
 		System.out.println("Min is: "+array[min]+", Max is: "+array[max]+", Mid is: "+array[mid]+", Key is: "+key);
 		if(max<min)
 			return null;
-		else if(array[mid]>key)
+		if(array[mid]>key)
 			binarySearch(key, array, min, mid-1);
 		else if(array[mid]<key)
 			binarySearch(key, array, mid+1, max);
