@@ -11,6 +11,6 @@ public class iSum{
 
 
 	public static void main(String [] args){
-		System.out.println(iSum(1000));
+		System.out.println(iSum(12));
 	}
 }
