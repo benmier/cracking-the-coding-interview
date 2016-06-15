@@ -13,6 +13,15 @@ namespace ConsoleApplication1
             Console.WriteLine("What's yo name?");
             string name = Console.ReadLine();
             Console.WriteLine("Hello " + name);
+
+            bool canVote = true;
+            char grade = 'A';
+            int maxInt = int.MaxValue;
+            long maxLong = long.MaxValue;
+            decimal maxDec = decimal.MaxValue;
+            float maxFloat = float.MaxValue;
+            double maxDouble = double.MaxValue;
+
         }
     }
 }
