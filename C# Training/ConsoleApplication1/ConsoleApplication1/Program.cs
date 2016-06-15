@@ -10,25 +10,27 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What's yo name?");
-            string name = Console.ReadLine();
-            Console.WriteLine("Hello " + name);
+            //Console.WriteLine("What's yo name?");
+            //string name = Console.ReadLine();
+            //Console.WriteLine("Hello " + name);
 
             bool canVote = true;
-            Console.WriteLine(canVote);
             char grade = 'A';
-            Console.WriteLine(grade);
             int maxInt = int.MaxValue;
-            Console.WriteLine(maxInt);
             long maxLong = long.MaxValue;
-            Console.WriteLine(maxLong);
             decimal maxDec = decimal.MaxValue;
-            Console.WriteLine(maxDec);
             float maxFloat = float.MaxValue;
-            Console.WriteLine(maxFloat);
             double maxDouble = double.MaxValue;
+            Console.WriteLine(canVote);
+            Console.WriteLine(grade);
+            Console.WriteLine(maxInt);
+            Console.WriteLine(maxLong);
+            Console.WriteLine(maxDec);
+            Console.WriteLine(maxFloat);
             Console.WriteLine(maxDouble);
 
+            var newVAr = "This is declared using var, and must now be a string";
+            Console.WriteLine(newVAr);
         }
     }
 }
