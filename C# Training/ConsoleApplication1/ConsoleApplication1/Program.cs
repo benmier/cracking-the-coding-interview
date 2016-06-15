@@ -15,12 +15,19 @@ namespace ConsoleApplication1
             Console.WriteLine("Hello " + name);
 
             bool canVote = true;
+            Console.WriteLine(canVote);
             char grade = 'A';
+            Console.WriteLine(grade);
             int maxInt = int.MaxValue;
+            Console.WriteLine(maxInt);
             long maxLong = long.MaxValue;
+            Console.WriteLine(maxLong);
             decimal maxDec = decimal.MaxValue;
+            Console.WriteLine(maxDec);
             float maxFloat = float.MaxValue;
+            Console.WriteLine(maxFloat);
             double maxDouble = double.MaxValue;
+            Console.WriteLine(maxDouble);
 
         }
     }
