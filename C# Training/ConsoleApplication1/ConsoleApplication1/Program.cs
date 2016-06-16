@@ -146,9 +146,19 @@ namespace ConsoleApplication1
 
             string sampString2 = "More random words";
 
-            Console.WriteLine("String Equal: "+sampString.Equals(sampString2));
-            Console.WriteLine("Starts with \"A bunch\": "+sampString.StartsWith("A bunch"));
-            Console.WriteLine("Is empty: "+String.IsNullOrEmpty(sampString));
+            //Console.WriteLine("String Equal: "+sampString.Equals(sampString2));
+            //Console.WriteLine("Starts with \"A bunch\": "+sampString.StartsWith("A bunch"));
+            //Console.WriteLine("Is empty: "+String.IsNullOrEmpty(sampString));
+            //Console.WriteLine("Ends with words: "+sampString.EndsWith("words"));
+
+            //sampString = sampString.Trim();
+            //sampString = sampString.TrimStart();
+            //sampString = sampString.TrimEnd();
+            sampString = sampString.Replace("words", "characters");
+            Console.WriteLine(sampString);
+            sampString = sampString.Remove(4, 8);
+            Console.WriteLine(sampString);
+
         }
     }
 }
