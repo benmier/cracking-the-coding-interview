@@ -169,7 +169,20 @@ namespace ConsoleApplication1
             //sb.Clear();
             sb.Replace("a", "o");
             sb.Remove(5, 7);
-            Console.WriteLine(sb);
+            //Console.WriteLine(sb);
+
+            int[] randArray = new int[5];
+            int[] randArray2 = { 1, 2, 3, 4, 5 };
+            Console.WriteLine("Array length: "+randArray2.Length);
+            Console.WriteLine("Item 0: "+randArray2[0]);
+            foreach(int q in randArray2)
+            {
+                Console.WriteLine(q);
+            }
+            for(int w=0; w<randArray2.Length; w++)
+            {
+                Console.WriteLine("{0}:{1}",w,randArray2[w]);
+            }
         }
     }
 }
