@@ -189,9 +189,16 @@ namespace ConsoleApplication1
             //string[] nameArray = nameStr.Split(",");
             int[,] multArray = new int[5, 3];
             int[,] multArray2 = { { 0, 1 }, { 2, 3 }, { 4, 5 } };
-            foreach(int num in multArray2)
+            //foreach(int num in multArray2)
+            //{
+            //    Console.WriteLine(num);
+            //}
+            for(int i=0; i<multArray2.GetLength(0); i++)
             {
-                Console.WriteLine(num);
+                for (int j = 0; j < multArray2.GetLength(1); j++)
+                {
+                    Console.WriteLine("[{0}], ",multArray2[i,j]);
+                }
             }
 
         }
