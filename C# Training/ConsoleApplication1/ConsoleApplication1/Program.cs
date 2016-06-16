@@ -159,9 +159,16 @@ namespace ConsoleApplication1
             //sampString = sampString.Remove(4, 8);
             //Console.WriteLine(sampString);
             string[] names = new string[3] {"Matt", "Joe", "Paul"};
-            Console.WriteLine("Name list: "+String.Join(", ",names));
+            //Console.WriteLine("Name list: "+String.Join(", ",names));
+            string fmtStr = String.Format("{0:c} {1:00.00} {2:#.00} {3:0,0}", 1.56, 15.567, .56, 1000);
+            //Console.WriteLine(fmtStr);
 
-
+            StringBuilder sb = new StringBuilder();
+            sb.Append("This is the first sentence. ");
+            sb.AppendFormat("My name is {0} and I live in {1}. ", "Derek", "Denmark");
+            //sb.Clear();
+            sb.Replace("a", "o");
+            Console.WriteLine(sb);
         }
     }
 }
