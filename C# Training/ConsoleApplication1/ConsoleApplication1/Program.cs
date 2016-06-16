@@ -68,7 +68,7 @@ namespace ConsoleApplication1
             Random rand = new Random();
             //Console.WriteLine("Random Number between 1 and 10 is " + rand.Next(1,11));
 
-            int age = 12;
+            int age = 6;
             if (age >= 7 && age <= 12)
                 Console.WriteLine("Elementary");
             else if (age > 12 && age < 15)
@@ -79,6 +79,23 @@ namespace ConsoleApplication1
             if (age < 14 || age > 67)
                 Console.WriteLine("You shouldn't work");
             Console.WriteLine("True is " + true + " and False is " + !true);
+            bool canDrive = age >= 16 ? true : false;
+            Console.WriteLine(canDrive);
+            switch (age)
+            {
+                case 0:
+                    Console.WriteLine("Infant");
+                    break;
+                case 1:
+                case 2:
+                    Console.WriteLine("Toddler");
+                    goto Cute;
+                default:
+                    Console.WriteLine("Child");
+                    break;
+            }
+            Cute:
+            Console.WriteLine("Toddlers are cute");
         }
     }
 }
