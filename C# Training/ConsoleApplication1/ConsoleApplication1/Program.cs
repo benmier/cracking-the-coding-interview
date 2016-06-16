@@ -168,6 +168,7 @@ namespace ConsoleApplication1
             sb.AppendFormat("My name is {0} and I live in {1}. ", "Derek", "Denmark");
             //sb.Clear();
             sb.Replace("a", "o");
+            sb.Remove(5, 7);
             Console.WriteLine(sb);
         }
     }
