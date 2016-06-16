@@ -115,6 +115,25 @@ namespace ConsoleApplication1
                 }
                 j++;
             }
+
+            string guess;
+            //do
+            //{
+            //    Console.WriteLine("Guess a number");
+            //    guess = Console.ReadLine();
+            //} while (!guess.Equals("15"));
+
+            //for(int k=0; k<10; k++)
+            //{
+            //    if (k % 2 == 0)
+            //        Console.WriteLine(k);
+            //}
+
+            string randStr = "Here are some random characters";
+            foreach(char c in randStr)
+            {
+                Console.Write(c);
+            }
         }
     }
 }
