@@ -183,7 +183,17 @@ namespace ConsoleApplication1
             //{
             //    Console.WriteLine("{0}:{1}", w, randArray2[w]);
             //}
-            Console.WriteLine("Where is 3: "+Array.IndexOf(randArray2,3));
+            //Console.WriteLine("Where is 3: "+Array.IndexOf(randArray2,3));
+            //string[] names = { "Tom", "Paul", "Sally" };
+            //string nameStr = string.Join(", ", names);
+            //string[] nameArray = nameStr.Split(",");
+            int[,] multArray = new int[5, 3];
+            int[,] multArray2 = { { 0, 1 }, { 2, 3 }, { 4, 5 } };
+            foreach(int num in multArray2)
+            {
+                Console.WriteLine(num);
+            }
+
         }
     }
 }
