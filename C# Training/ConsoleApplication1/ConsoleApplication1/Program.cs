@@ -21,16 +21,17 @@ namespace ConsoleApplication1
             decimal maxDec = decimal.MaxValue;
             float maxFloat = float.MaxValue;
             double maxDouble = double.MaxValue;
-            Console.WriteLine(canVote);
-            Console.WriteLine(grade);
-            Console.WriteLine(maxInt);
-            Console.WriteLine(maxLong);
-            Console.WriteLine(maxDec);
-            Console.WriteLine(maxFloat);
-            Console.WriteLine(maxDouble);
+            //Console.WriteLine(canVote);
+            //Console.WriteLine(grade);
+            //Console.WriteLine(maxInt);
+            //Console.WriteLine(maxLong);
+            //Console.WriteLine(maxDec);
+            //Console.WriteLine(maxFloat);
+            //Console.WriteLine(maxDouble);
 
             var newVAr = "This is declared using var, and must now be a string";
-            Console.WriteLine(newVAr);
+            //Console.WriteLine(newVAr);
+            Console.WriteLine("newVar is a {0}", newVAr.GetTypeCode());
         }
     }
 }
