@@ -98,23 +98,23 @@ namespace ConsoleApplication1
             //Console.WriteLine("Toddlers are cute");
 
             int j = 0;
-            while (j < 10)
-            {
-                if (j == 7)
-                {
-                    j++;
-                }
+            //while (j < 10)
+            //{
+            //    if (j == 7)
+            //    {
+            //        j++;
+            //    }
 
-                if (j == 9)
-                {
-                    break;
-                }
-                if (j % 2 > 0)
-                {
-                    Console.WriteLine(j);
-                }
-                j++;
-            }
+            //    if (j == 9)
+            //    {
+            //        break;
+            //    }
+            //    if (j % 2 > 0)
+            //    {
+            //        Console.WriteLine(j);
+            //    }
+            //    j++;
+            //}
 
             string guess;
             //do
@@ -130,10 +130,15 @@ namespace ConsoleApplication1
             //}
 
             string randStr = "Here are some random characters";
-            foreach(char c in randStr)
-            {
-                Console.Write(c);
-            }
+            //foreach(char c in randStr)
+            //{
+            //    Console.Write(c);
+            //}
+
+            string sampString = "A bunch of random words";
+            Console.WriteLine("is empty "+String.IsNullOrEmpty(sampString));
+            Console.WriteLine("is empty "+String.IsNullOrWhiteSpace(sampString));
+            Console.WriteLine("String length "+sampString.Length);
         }
     }
 }
