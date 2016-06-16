@@ -171,8 +171,8 @@ namespace ConsoleApplication1
             //sb.Remove(5, 7);
             //Console.WriteLine(sb);
 
-            int[] randArray = new int[5];
-            int[] randArray2 = { 1, 2, 3, 4, 5 };
+            //int[] randArray = new int[5];
+            //int[] randArray2 = { 1, 2, 3, 4, 5 };
             //Console.WriteLine("Array length: " + randArray2.Length);
             //Console.WriteLine("Item 0: " + randArray2[0]);
             //foreach (int q in randArray2)
@@ -187,19 +187,21 @@ namespace ConsoleApplication1
             //string[] names = { "Tom", "Paul", "Sally" };
             //string nameStr = string.Join(", ", names);
             //string[] nameArray = nameStr.Split(",");
-            int[,] multArray = new int[5, 3];
-            int[,] multArray2 = { { 0, 1 }, { 2, 3 }, { 4, 5 } };
-            //foreach(int num in multArray2)
+            //int[,] multArray = new int[5, 3];
+            //int[,] multArray2 = { { 0, 1 }, { 2, 3 }, { 4, 5 } };
+            //foreach (int num in multArray2)
             //{
             //    Console.WriteLine(num);
             //}
-            for(int i=0; i<multArray2.GetLength(0); i++)
-            {
-                for (int j = 0; j < multArray2.GetLength(1); j++)
-                {
-                    Console.WriteLine("[{0}], ",multArray2[i,j]);
-                }
-            }
+            //for (int i = 0; i < multArray2.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < multArray2.GetLength(1); j++)
+            //    {
+            //        Console.WriteLine("{0}|{1}:{2} ", i, j, multArray2[i, j]);
+            //    }
+            //}
+
+
 
         }
     }
