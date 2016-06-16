@@ -154,10 +154,13 @@ namespace ConsoleApplication1
             //sampString = sampString.Trim();
             //sampString = sampString.TrimStart();
             //sampString = sampString.TrimEnd();
-            sampString = sampString.Replace("words", "characters");
-            Console.WriteLine(sampString);
-            sampString = sampString.Remove(4, 8);
-            Console.WriteLine(sampString);
+            //sampString = sampString.Replace("words", "characters");
+            //Console.WriteLine(sampString);
+            //sampString = sampString.Remove(4, 8);
+            //Console.WriteLine(sampString);
+            string[] names = new string[3] {"Matt", "Joe", "Paul"};
+            Console.WriteLine("Name list: "+String.Join(", ",names));
+
 
         }
     }
