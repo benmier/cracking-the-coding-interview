@@ -289,6 +289,16 @@ namespace ConsoleApplication1
             return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3}.", name, height, weight, sound);
         }
 
+        public int getSum(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+
+        public double getSum(double num1, double num2)
+        {
+            return num1 + num2;
+        }
+
         static void Main(string[] args)
         {
             Animal spot = new Animal(15, 10, "Joe", "Moo");
