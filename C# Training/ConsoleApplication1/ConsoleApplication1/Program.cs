@@ -267,17 +267,37 @@ namespace ConsoleApplication1
             //Console.WriteLine("Tri Area: " + tri.area());
             //Console.WriteLine("combRect Area: " + combRect.area());
 
-            KeyValue<string, string> superman = new KeyValue<string, string>("", "");
-            superman.key = "Superman";
-            superman.value = "Clark Kent";
+            //KeyValue<string, string> superman = new KeyValue<string, string>("", "");
+            //superman.key = "Superman";
+            //superman.value = "Clark Kent";
 
-            KeyValue<int, string> samsungTV = new KeyValue<int, string>(0, "");
-            superman.key = 12345;
-            superman.value = "a 50 inch Samsung TV";
+            //KeyValue<int, string> samsungTV = new KeyValue<int, string>(0, "");
+            //samsungTV.key = 12345;
+            //samsungTV.value = "a 50 inch Samsung TV";
 
-            superman.showData();
-            samsungTV.showData();
+            //superman.showData();
+            //samsungTV.showData();
 
+            Temperature micTemp = Temperature.Low;
+
+            switch (micTemp)
+            {
+                case Temperature.Freeze:
+                    Console.WriteLine("Temp on Freezing");
+                    break;
+
+                case Temperature.Low:
+                    Console.WriteLine("Temp on Low");
+                    break;
+
+                case Temperature.Warm:
+                    Console.WriteLine("Temp on Warm");
+                    break;
+
+                case Temperature.Boil:
+                    Console.WriteLine("Temp on Boil");
+                    break;
+            }
         }
     }
 
@@ -425,5 +445,13 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("{0} is {1}",this.key,this.value);
         }
+    }
+
+    public enum Temperature
+    {
+        Freeze,
+        Low,
+        Warm,
+        Boil
     }
 }
