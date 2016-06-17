@@ -213,7 +213,7 @@ namespace ConsoleApplication1
             //    Console.WriteLine(x);
             //}
             //List<int> numList2 = new List<int>(randArray);
-            List<int> numList3 = new List<int>(new int[] { 1, 2, 3, 4, 5 });
+            //List<int> numList3 = new List<int>(new int[] { 1, 2, 3, 4, 5 });
             //numList.Insert(1, 10);
             //numList.Remove(5);
             //numList.RemoveAt(2);
@@ -221,12 +221,24 @@ namespace ConsoleApplication1
             //{
             //    Console.WriteLine(numList[i]);
             //}
-            Console.WriteLine("4 is in index: "+numList3.IndexOf(4));
-            Console.WriteLine("5 in list? " +numList3.Contains(5));
-            List<string> strList = new List<string>(new string[] { "Tom", "Paul" });
-            Console.WriteLine("Tom in list? "+strList.Contains("tom",StringComparer.OrdinalIgnoreCase));
-            strList.Sort();
-            Console.WriteLine(strList.ToString());
+            //Console.WriteLine("4 is in index: "+numList3.IndexOf(4));
+            //Console.WriteLine("5 in list? " +numList3.Contains(5));
+            //List<string> strList = new List<string>(new string[] { "Tom", "Paul" });
+            //Console.WriteLine("Tom in list? "+strList.Contains("tom",StringComparer.OrdinalIgnoreCase));
+            //strList.Sort();
+
+            try
+            {
+                Console.Write("Divide 10 by ");
+                int num = int.Parse(Console.ReadLine());
+                Console.WriteLine("10/{0} = {1}",num,10/num);
+            }
+            catch(DivideByZeroException ex)
+            {
+                Console.WriteLine("Can't divide by zero");
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
