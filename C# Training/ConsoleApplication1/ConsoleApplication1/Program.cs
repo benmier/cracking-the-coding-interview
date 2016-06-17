@@ -305,7 +305,16 @@ namespace ConsoleApplication1
             Console.WriteLine(spot.toString());
             Console.WriteLine("{0} says {1}!",spot.name,spot.sound);
             Console.WriteLine("There are {0} animal(s)!",Animal.getNumOfAnimals());
+            Console.WriteLine("IntSum: {0} doublsSum: {1}", spot.getSum(1, 2), spot.getSum(1.2, 3.2));
 
+            Animal grover = new Animal
+            {
+                name = "Grover",
+                height = 15,
+                weight = 14,
+                sound = "Grr"
+            };
+            Console.WriteLine(grover.toString());
         }
     }
 }
