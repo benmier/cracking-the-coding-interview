@@ -223,6 +223,10 @@ namespace ConsoleApplication1
             //}
             Console.WriteLine("4 is in index: "+numList3.IndexOf(4));
             Console.WriteLine("5 in list? " +numList3.Contains(5));
+            List<string> strList = new List<string>(new string[] { "Tom", "Paul" });
+            Console.WriteLine("Tom in list? "+strList.Contains("tom",StringComparer.OrdinalIgnoreCase));
+            strList.Sort();
+            Console.WriteLine(strList.ToString());
         }
     }
 }
