@@ -255,10 +255,29 @@ namespace ConsoleApplication1
             //    sound = "Grrr"
             //};
             //Console.WriteLine(grover.toString());
-            Dog spike = new Dog();
-            Console.WriteLine(spike.toString());
-            spike = new Dog(20,15,"Spike","Grrr","Chicken");
-            Console.WriteLine(spike.toString());
+            //Dog spike = new Dog();
+            //Console.WriteLine(spike.toString());
+            //spike = new Dog(20,15,"Spike","Grrr","Chicken");
+            //Console.WriteLine(spike.toString());
+
+            //Shape rect = new Rectangle(5, 5);
+            //Shape tri = new Triangle(5, 5);
+            //Rectangle combRect = new Rectangle(5, 5) + new Rectangle(5, 5);
+            //Console.WriteLine("Rect Area: " + rect.area());
+            //Console.WriteLine("Tri Area: " + tri.area());
+            //Console.WriteLine("combRect Area: " + combRect.area());
+
+            KeyValue<string, string> superman = new KeyValue<string, string>("", "");
+            superman.key = "Superman";
+            superman.value = "Clark Kent";
+
+            KeyValue<int, string> samsungTV = new KeyValue<int, string>(0, "");
+            superman.key = 12345;
+            superman.value = "a 50 inch Samsung TV";
+
+            superman.showData();
+            samsungTV.showData();
+
         }
     }
 
@@ -388,6 +407,23 @@ namespace ConsoleApplication1
         public override double area()
         {
             return 0.5 * theBase * height;
+        }
+    }
+
+    class KeyValue<TKey, TValue>
+    {
+        public TKey key { get; set; }
+        public TValue value { get; set; }
+        
+        public KeyValue(TKey k, TValue v)
+        {
+            key = k;
+            value = v;
+        }
+
+        public void showData()
+        {
+            Console.WriteLine("{0} is {1}",this.key,this.value);
         }
     }
 }
