@@ -201,27 +201,28 @@ namespace ConsoleApplication1
             //    }
             //}
 
-            List<int> numList = new List<int>();
-            numList.Add(5);
-            numList.Add(15);
-            numList.Add(25);
-            int[] randArray = { 1, 2, 3, 4, 5 };
-            numList.AddRange(randArray);
-            //numList.Clear();
-            foreach(int x in numList)
-            {
-                Console.WriteLine(x);
-            }
-            List<int> numList2 = new List<int>(randArray);
+            //List<int> numList = new List<int>();
+            //numList.Add(5);
+            //numList.Add(15);
+            //numList.Add(25);
+            //int[] randArray = { 1, 2, 3, 4, 5 };
+            //numList.AddRange(randArray);
+            ////numList.Clear();
+            //foreach(int x in numList)
+            //{
+            //    Console.WriteLine(x);
+            //}
+            //List<int> numList2 = new List<int>(randArray);
             List<int> numList3 = new List<int>(new int[] { 1, 2, 3, 4, 5 });
-            numList.Insert(1, 10);
-            numList.Remove(5);
-            numList.RemoveAt(2);
-            for(int i=0; i<numList.Count; i++)
-            {
-                Console.WriteLine(numList[i]);
-            }
-
+            //numList.Insert(1, 10);
+            //numList.Remove(5);
+            //numList.RemoveAt(2);
+            //for(int i=0; i<numList.Count; i++)
+            //{
+            //    Console.WriteLine(numList[i]);
+            //}
+            Console.WriteLine("4 is in index: "+numList3.IndexOf(4));
+            Console.WriteLine("5 in list? " +numList3.Contains(5));
         }
     }
 }
