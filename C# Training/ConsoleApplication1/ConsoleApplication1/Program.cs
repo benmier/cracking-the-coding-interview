@@ -201,7 +201,13 @@ namespace ConsoleApplication1
             //    }
             //}
 
-
+            List<int> numList = new List<int>();
+            numList.Add(5);
+            numList.Add(15);
+            numList.Add(25);
+            int[] randArray = { 1, 2, 3, 4, 5 };
+            numList.AddRange(randArray);
+            
 
         }
     }
