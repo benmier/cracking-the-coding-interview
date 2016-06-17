@@ -8,8 +8,8 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
+        static void Main(string[] args)
+        {
             //Console.WriteLine("What's yo name?");
             //string name = Console.ReadLine();
             //Console.WriteLine("Hello " + name);
@@ -242,8 +242,22 @@ namespace ConsoleApplication1
             //    Console.Write("{0}! {1}\n",ex.GetType().Name,ex.Message);
             //}
 
-
-        //}
+            //Animal spot = new Animal(15, 10, "Joe", "Moo");
+            //Console.WriteLine(spot.toString());
+            //Console.WriteLine("{0} says {1}!",spot.name,spot.sound);
+            //Console.WriteLine("There are {0} animal(s)!",Animal.getNumOfAnimals());
+            //Console.WriteLine("IntSum: {0} doublsSum: {1}", spot.getSum(1, 2), spot.getSum(1.2, 3.2));
+            //Animal grover = new Animal
+            //{
+            //    name = "Grover",
+            //    height = 15,
+            //    weight = 14,
+            //    sound = "Grrr"
+            //};
+            //Console.WriteLine(grover.toString());
+            Dog spike = new Dog();
+            Console.WriteLine(spike.toString());
+        }
     }
 
     class Animal
@@ -298,23 +312,24 @@ namespace ConsoleApplication1
         {
             return num1 + num2;
         }
+    }
 
-        static void Main(string[] args)
+    class Dog :Animal
+    {
+        public string favFood { get; set; }
+        public Dog() : base()
         {
-            Animal spot = new Animal(15, 10, "Joe", "Moo");
-            Console.WriteLine(spot.toString());
-            Console.WriteLine("{0} says {1}!",spot.name,spot.sound);
-            Console.WriteLine("There are {0} animal(s)!",Animal.getNumOfAnimals());
-            Console.WriteLine("IntSum: {0} doublsSum: {1}", spot.getSum(1, 2), spot.getSum(1.2, 3.2));
+            this.favFood = "No favorite food";
+        }
 
-            Animal grover = new Animal
-            {
-                name = "Grover",
-                height = 15,
-                weight = 14,
-                sound = "Grr"
-            };
-            Console.WriteLine(grover.toString());
+        public Dog(double height, double weight, string name, string sound, string favFood) : base(height, weight, name, sound)
+        {
+            this.favFood = favFood;
+        }
+
+        new public string toString()
+        {
+            return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3} and eats {4}.", name, height, weight, sound, favFood);
         }
     }
 }
