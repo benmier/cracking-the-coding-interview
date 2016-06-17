@@ -365,6 +365,13 @@ namespace ConsoleApplication1
         {
             return length * width;
         }
+
+        public static Rectangle operator+ (Rectangle rect1, Rectangle rect2)
+        {
+            double rectLength = rect1.length + rect2.length;
+            double rectWidth = rect1.width + rect2.width;
+            return new Rectangle(rectLength, rectWidth);
+        }
     }
 
     class Triangle : Shape
@@ -380,7 +387,7 @@ namespace ConsoleApplication1
 
         public override double area()
         {
-            return 0.5* theBase * height;
+            return 0.5 * theBase * height;
         }
     }
 }
