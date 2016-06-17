@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+delegate double GetSum(double num1, double num2);
+
 namespace ConsoleApplication1
 {
     class Program
     {
+        GetSum sum = delegate(double num1, double num2)
+
         static void Main(string[] args)
         {
             //Console.WriteLine("What's yo name?");
@@ -299,9 +303,11 @@ namespace ConsoleApplication1
             //        break;
             //}
 
-            Customers bob = new Customers();
-            bob.createCust("Bob", 15.50, 12345);
-            bob.showCust();
+            //Customers bob = new Customers();
+            //bob.createCust("Bob", 15.50, 12345);
+            //bob.showCust();
+
+
         }
     }
 
@@ -479,4 +485,5 @@ namespace ConsoleApplication1
             Console.WriteLine("ID: " + id);
         }
     }
+
 }
