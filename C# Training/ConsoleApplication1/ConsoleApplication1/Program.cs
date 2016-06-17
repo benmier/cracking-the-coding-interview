@@ -214,6 +214,13 @@ namespace ConsoleApplication1
             }
             List<int> numList2 = new List<int>(randArray);
             List<int> numList3 = new List<int>(new int[] { 1, 2, 3, 4, 5 });
+            numList.Insert(1, 10);
+            numList.Remove(5);
+            numList.RemoveAt(2);
+            for(int i=0; i<numList.Count; i++)
+            {
+                Console.WriteLine(numList[i]);
+            }
 
         }
     }
