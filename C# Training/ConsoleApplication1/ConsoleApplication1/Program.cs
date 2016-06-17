@@ -334,4 +334,53 @@ namespace ConsoleApplication1
             return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3} and eats {4}.", name, height, weight, sound, favFood);
         }
     }
+
+    abstract class Shape
+    {
+        public abstract double area();
+
+        public void sayHi()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+
+    public interface ShapeItem
+    {
+        double area();
+    }
+
+    class Rectangle : Shape
+    {
+        private double length;
+        private double width;
+
+        public Rectangle(double num1, double num2)
+        {
+            length = num1;
+            width = num2;
+        }
+
+        public override double area()
+        {
+            return length * width;
+        }
+    }
+
+    class Triangle : Shape
+    {
+        private double theBase;
+        private double height;
+
+        public Triangle(double num1, double num2)
+        {
+            theBase = num1;
+            height = num2;
+        }
+
+        public override double area()
+        {
+            return 0.5* theBase * height;
+        }
+    }
 }
