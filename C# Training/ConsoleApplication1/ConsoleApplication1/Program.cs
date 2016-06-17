@@ -294,7 +294,7 @@ namespace ConsoleApplication1
             Animal spot = new Animal(15, 10, "Joe", "Moo");
             Console.WriteLine(spot.toString());
             Console.WriteLine("{0} says {1}!",spot.name,spot.sound);
-            Console.WriteLine("There are {0} animal(s)!",getNumOfAnimals());
+            Console.WriteLine("There are {0} animal(s)!",Animal.getNumOfAnimals());
 
         }
     }
