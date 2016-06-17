@@ -265,6 +265,7 @@ namespace ConsoleApplication1
             this.weight = 0;
             this.sound = "No sound";
             this.name = "No name";
+            numOfAnimals++;
         }
 
         public Animal(double height, double weight, string name, string sound)
@@ -273,10 +274,25 @@ namespace ConsoleApplication1
             this.weight = weight;
             this.sound = sound;
             this.name = name;
+            numOfAnimals++;
+        }
+
+        static int numOfAnimals = 0;
+        
+        public static int getNumOfAnimals()
+        {
+            return numOfAnimals;
+        }
+
+        public string toString()
+        {
+            return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3}", name, height, weight, sound);
         }
 
         static void Main(string[] args)
         {
+            Animal spot = new Animal(15, 10, "Joe", "Moo");
+            Console.WriteLine(spot.toString());
 
         }
     }
