@@ -286,13 +286,15 @@ namespace ConsoleApplication1
 
         public string toString()
         {
-            return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3}", name, height, weight, sound);
+            return String.Format("{0} is {1} inches tall, weighs {2} lbs and likes to say {3}.", name, height, weight, sound);
         }
 
         static void Main(string[] args)
         {
             Animal spot = new Animal(15, 10, "Joe", "Moo");
             Console.WriteLine(spot.toString());
+            Console.WriteLine("{0} says {1}!",spot.name,spot.sound);
+            Console.WriteLine("There are {0} animal(s)!",getNumOfAnimals());
 
         }
     }
