@@ -257,6 +257,8 @@ namespace ConsoleApplication1
             //Console.WriteLine(grover.toString());
             Dog spike = new Dog();
             Console.WriteLine(spike.toString());
+            spike = new Dog(20,15,"Spike","Grrr","Chicken");
+            Console.WriteLine(spike.toString());
         }
     }
 
