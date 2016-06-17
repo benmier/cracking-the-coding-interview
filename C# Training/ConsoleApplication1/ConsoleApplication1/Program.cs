@@ -207,7 +207,13 @@ namespace ConsoleApplication1
             numList.Add(25);
             int[] randArray = { 1, 2, 3, 4, 5 };
             numList.AddRange(randArray);
-            
+            //numList.Clear();
+            foreach(int x in numList)
+            {
+                Console.WriteLine(x);
+            }
+            List<int> numList2 = new List<int>(randArray);
+            List<int> numList3 = new List<int>(new int[] { 1, 2, 3, 4, 5 });
 
         }
     }
