@@ -8,8 +8,8 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        static void Main(string[] args)
-        {
+        //static void Main(string[] args)
+        //{
             //Console.WriteLine("What's yo name?");
             //string name = Console.ReadLine();
             //Console.WriteLine("Hello " + name);
@@ -227,20 +227,57 @@ namespace ConsoleApplication1
             //Console.WriteLine("Tom in list? "+strList.Contains("tom",StringComparer.OrdinalIgnoreCase));
             //strList.Sort();
 
-            try
-            {
-                Console.Write("Divide 10 by ");
-                int num = int.Parse(Console.ReadLine());
-                Console.WriteLine("10/{0} = {1}",num,10/num);
-            }
-            catch(DivideByZeroException ex)
-            {
-                Console.WriteLine("Can't divide by zero");
-            }
-            catch(Exception ex)
-            {
-                Console.Write("{0}! {1}\n",ex.GetType().Name,ex.Message);
-            }
+            //try
+            //{
+            //    Console.Write("Divide 10 by ");
+            //    int num = int.Parse(Console.ReadLine());
+            //    Console.WriteLine("10/{0} = {1}",num,10/num);
+            //}
+            //catch(DivideByZeroException ex)
+            //{
+            //    Console.WriteLine("Can't divide by zero");
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.Write("{0}! {1}\n",ex.GetType().Name,ex.Message);
+            //}
+
+
+        //}
+    }
+
+    class Animal
+    {
+        public double height { get; set; }
+        public double weight { get; set; }
+        public string sound { get; set; }
+
+        public string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; } //Must be called value!
+        }
+
+        public Animal()
+        {
+            this.height = 0;
+            this.weight = 0;
+            this.sound = "No sound";
+            this.name = "No name";
+        }
+
+        public Animal(double height, double weight, string name, string sound)
+        {
+            this.height = height;
+            this.weight = weight;
+            this.sound = sound;
+            this.name = name;
+        }
+
+        static void Main(string[] args)
+        {
+
         }
     }
 }
