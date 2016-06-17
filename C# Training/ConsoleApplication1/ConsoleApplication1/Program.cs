@@ -236,8 +236,10 @@ namespace ConsoleApplication1
             catch(DivideByZeroException ex)
             {
                 Console.WriteLine("Can't divide by zero");
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                Console.Write("{0}! {1}\n",ex.GetType().Name,ex.Message);
             }
         }
     }
