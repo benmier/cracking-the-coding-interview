@@ -10,8 +10,6 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        GetSum sum = delegate(double num1, double num2)
-
         static void Main(string[] args)
         {
             //Console.WriteLine("What's yo name?");
@@ -307,7 +305,21 @@ namespace ConsoleApplication1
             //bob.createCust("Bob", 15.50, 12345);
             //bob.showCust();
 
+            //GetSum sum = delegate (double num1, double num2)
+            //{
+            //    return num1 + num2;
+            //};
+            //Console.WriteLine("5+10=" +sum(5,10));
 
+            Func<int, int, int> getSum = (x, y) => x + y;
+            Console.WriteLine("5+3=" + getSum(3, 5));
+
+            List<int> numList = new List<int> { 5, 10, 15, 20, 25 };
+            List<int> oddNums = numList.Where(n => n % 2 == 1).ToList();
+            foreach(int num in oddNums)
+            {
+                Console.WriteLine(num);
+            }
         }
     }
 
