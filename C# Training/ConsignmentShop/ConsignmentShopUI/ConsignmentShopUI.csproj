@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3E8EA1E-8C9F-481A-A891-EC281A345EE9}</ProjectGuid>
+    <ProjectGuid>{23378443-E54A-45D3-ADCC-10E400C2FA9A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsignmentShopUI</RootNamespace>
